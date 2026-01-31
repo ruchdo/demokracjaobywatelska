@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demokracja Obywatelska - DO Przodu: od środka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
+        <div class="menu-container">
+            <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Start</a>
+                <a href="contact.html">Co dalej</a>
+                <a href="articles.html">Biała Księga</a>
+                <a href="do_przodu.m4a" target="_blank">Posłuchaj</a>
+                <a href="inside.html">Od środka</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-bottom: 40px; border-left: 6px solid var(--do-green); padding-left: 20px; font-size: 2rem;">Demokracja Obywatelska - DO Przodu: od środka</h2>
+        
+        <div class="article-grid">
+            <!-- Inside 1 -->
+            <a href="i01.html" class="card">
+                <img src="i01.jpg" alt="Pożegnanie z politycznym przedszkolem" onerror="this.src='https://via.placeholder.com/600x400%?text=Pożegnanie+z+politycznym+przedszkolem'">
+                <div class="card-content">
+                    <h3>Pożegnanie z politycznym przedszkolem</h3>
+                    <p>Czym jest Demokracja Obywatelska i dlaczego idziemy DO Przodu</p>
+                </div>
+            </a>
+
+            <!-- Inside 2 -->
+            <a href="i02.html" class="card">
+                <img src="i02.jpg" alt="Budowniczy Nowej Polski" onerror="this.src='https://via.placeholder.com/600x400?text=Budowniczy+Nowej+Polski'">
+                <div class="card-content">
+                    <h3>Zawód: Budowniczy Nowej Polski</h3>
+                    <p>Dlaczego w DO Przodu płacimy za zmienianie świata</p>
+                </div>
+            </a>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Demokracja Obywatelska - DO Przodu</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Polska 2.0 - Projekt Open Source</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
