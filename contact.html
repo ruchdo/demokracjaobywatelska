@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demokracja Obywatelska - DO Przodu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+    
+            .back-link { display: inline-block; margin-bottom: 20px; color: var(--do-green); text-decoration: none; font-weight: bold; }
+        
+            .hero-article-preview {
+            max-width: 900px; /* Nieco szerzej dla lepszej czytelności tabeli */
+            margin: 40px auto;
+            text-align: left;
+            background: #fff;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .hero-article-preview h1 {
+            color: var(--do-green);
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .lead-text {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--do-green);
+            padding-left: 20px;
+        }
+
+        /* Stylizacja Tabeli - Rounded & Modern */
+        .table-container {
+            overflow-x: auto; /* Przewijanie na mobile */
+            margin: 30px 0;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .hero-article-preview table {
+            width: 100%;
+            border-collapse: separate; /* Kluczowe dla border-radius */
+            border-spacing: 0;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .hero-article-preview th {
+            background-color: #f3f4f6;
+            color: var(--do-grey);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            padding: 16px;
+            border-bottom: 2px solid #e5e7eb;
+            text-align: left;
+        }
+
+        .hero-article-preview td {
+            padding: 16px;
+            border-bottom: 1px solid #f3f4f6;
+            color: #374151;
+            vertical-align: top;
+        }
+
+        .hero-article-preview tr:last-child td {
+            border-bottom: none;
+        }
+
+        .hero-article-preview tr:hover td {
+            background-color: #f9fafb;
+        }
+
+        /* Content Boxes - Kafelki dla sekcji */
+        .content-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .content-box:hover {
+            border-color: var(--do-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            background: #fff;
+        }
+
+        .content-box h2 {
+            color: var(--do-green);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(22, 163, 74, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .content-box ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .content-box li {
+            margin-bottom: 12px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .content-box li strong {
+            color: var(--do-grey);
+        }
+
+        /* FAQ Specific */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item strong {
+            display: block;
+            color: var(--do-grey);
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="DO Przodu">
+        </a>
+        
+        <div class="menu-container">
+            <button class="hamburger" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Start</a>
+                <a href="contact.html">Co dalej</a>
+                <a href="articles.html">Biała Księga</a>
+                <a href="do_przodu.m4a" target="_blank">Posłuchaj</a>
+                <a href="inside.html">Od środka</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-article-preview">
+                <h1>CO DALEJ? Plan działania!</h1>
+                <p class="lead-text">Jesteś tu, bo masz dość gadania – chcesz <strong>DZIAŁAĆ</strong>. Nie budujemy kolejnej partii obietnic, ale system sprawowania władzy. To plan przejścia od teorii do realnego wpływu na państwo.</p>
+                
+                <h2>🗺️ ROADMAPA 2026: Od zera do sprawstwa</h2>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Faza</th>
+                                <th>Okres</th>
+                                <th>Cel Główny</th>
+                                <th>Twoja rola</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fundamenty</strong></td>
+                                <td>Luty – Marzec</td>
+                                <td>Budowa zespołu i poszukiwanie zaangażowanych osób</td>
+                                <td>Zgłoś się do zespołu</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Budowa MVP</strong></td>
+                                <td>Kwiecień – Maj</td>
+                                <td>Powstanie wczesnej wersji platformy (Alpha)</td>
+                                <td>Zostań testerem/ką</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Testy Bojowe</strong></td>
+                                <td>Czerwiec – Lipiec</td>
+                                <td>Pierwsze pilotowe głosowanie na żywym organizmie</td>
+                                <td>Oddaj pierwszy głos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Skalowanie</strong></td>
+                                <td>Sierpień – Grudzień</td>
+                                <td>Rejestracja partii i struktury w całej Polsce</td>
+                                <td>Buduj regiony</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="content-box">
+                    <h2>🔥 KOGO POTRZEBUJEMY OD ZARAZ?</h2>
+                    <p style="margin-bottom: 20px;">Nic nie zbuduje się samo. Szukamy profesjonalistów, którzy rozumieją, że technologia to wolność:</p>
+                    <ul>
+                        <li><strong>Dev-Team (Blockchain / Web3 / Fullstack)</strong> – priorytet. Musimy stworzyć bezpieczny silnik dla naszej demokracji.</li>
+                        <li><strong>Koordynator/ka Wolontariuszy</strong> – ktoś, kto zapanuje nad rosnącą energią społeczności.</li>
+                        <li><strong>Prawnik/Prawniczka</strong> – musimy bezpiecznie przejść proces formalizacji ruchu i partii.</li>
+                        <li><strong>Fundraiser/ka</strong> – potrzebujemy paliwa na serwery, kampanie i rozwój narzędzi.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h2>⚡ POZIOMY ZAANGAŻOWANIA</h2>
+                    <p style="margin-bottom: 20px;">Dostosuj swoją aktywność do możliwości. Traktujemy Cię jak dorosłego – każda sekunda Twojego czasu to inwestycja w wolność.</p>
+                    <ul>
+                        <li><strong>Level 1: Obserwator (15 min/tydz.)</strong> – Podawaj dalej nasze posty. Buduj zasięg tam, gdzie inni go blokują.</li>
+                        <li><strong>Level 2: Aktywista (1-2h/tydz.)</strong> – Komentuj, zapraszaj merytoryczne osoby, bierz udział w ankietach przedwdrożeniowych.</li>
+                        <li><strong>Level 3: Wolontariusz (4-6h/tydz.)</strong> – Dołącz do grupy roboczej (IT, grafika, prawo, logistyka, audyt).</li>
+                        <li><strong>Level 4: Lider (8-10h/tydz.)</strong> – Buduj struktury regionalne i przygotowuj się do roli „Interfejsu” w 2027.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h2>🛡️ SZUKAMY „DLACZEGO NIE” (Kultura Otwartej Krytyki)</h2>
+                    <p>Większość ruchów politycznych boi się krytyki. My jej pożądamy. Jeśli uważasz, że Demokracja Obywatelska ma słabe punkty, że coś „nie zadziała”, albo widzisz luki w bezpieczeństwie – chcemy Cię usłyszeć.</p>
+                    <p>Nie obrażamy się na trudne pytania. Głosy sceptyków pozwalają nam dostrzec to, co jest do poprawienia, zanim system wejdzie w życie. Jeśli potrafisz merytorycznie punktować błędy – jesteś dla nas skarbem. Twoja krytyka to dla nas darmowy audyt, który czyni projekt silniejszym.</p>
+                    <p style="color:var(--do-green); font-weight:600; margin-top: 15px;">👉 Zostań naszym krytykiem / audytorem</p>
+                </div>
+
+                <div class="content-box">
+                    <h2>❓ FAQ (Krótko i na temat)</h2>
+                    <div class="faq-item">
+                        <strong>Czy to legalne?</strong>
+                        <p>Tak. Prawo pozwala nam się organizować. Najpierw jako ruch, potem jako partia, która zmieni prawo od środka.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <strong>Nie znacie się na polityce!</strong>
+                        <p>I bardzo dobrze. Znamy się na zarządzaniu, technologii i logice. Politycy od lat pokazują, że „znanie się na polityce” to synonim bezradności.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <strong>Skąd macie pieniądze?</strong>
+                        <p>Z crowdfundingu i własnych oszczędności. Żadnych oligarchów, żadnych dotacji z budżetu na starcie. Tylko czysta energia obywatelska.</p>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h2>📬 KONTAKT I DZIAŁANIE</h2>
+                    <p>Nie czekaj na zaproszenie. Jeśli czujesz, że ten system ma sens – napisz do nas teraz.</p>
+                    <p>Chcesz dołączyć do Dev-Teamu? Chcesz punktować słabe strony projektu? Chcesz zostać liderem?</p>
+                    <p style="margin-top: 20px;">Napisz bezpośrednio na: <a href="mailto:kontakt@ruchdo.pl" style="color:var(--do-green); font-weight:700; text-decoration:none;">📧 kontakt@ruchdo.pl</a></p>
+                    <p>W tytule maila wpisz krótko:<br>
+                    <code style="background:#f3f4f6; padding:8px 12px; border-radius:6px; display:inline-block; margin-top:10px; color:var(--do-grey); font-family: 'Inter', monospace; border: 1px solid #e5e7eb;">IT / Krytyka / Wolontariat / Media / Wsparcie</code></p>
+                    
+                    <div style="margin-top: 30px; border-top: 2px solid #e5e7eb; padding-top: 20px;">
+                        <p style="font-weight: 800; color: var(--do-grey); font-size: 1.1rem; margin-bottom: 0;">Demokracja Obywatelska - DO Przodu</p>
+                        <p style="color: #4b5563; font-style: italic;">Obywatele decydują. Politycy wykonują.</p>
+                    </div>
+                </div>
+
+<a href="about.html" class="back-link">&rarr; O autorze</a>
+                    
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Demokracja Obywatelska - DO Przodu</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Polska 2.0 - Projekt Open Source</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menuToggle');
+        const nav = document.getElementById('navLinks');
+        
+        btn.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
