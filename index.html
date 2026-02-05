@@ -7,6 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --do-green: #16a34a;
+        }
+
+        /* Nowe style dla responsywnej tabeli */
+        .hero-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+            font-family: sans-serif;
+            table-layout: fixed; /* Wymusza sztywne trzymanie szerokości kolumn */
+            margin-bottom: 40px;
+        }
+
+        .hero-table td {
+            width: 50%;
+            padding: 15px;
+            border: none;
+            vertical-align: middle;
+            word-wrap: break-word; /* Zapobiega wyciekaniu długiego tekstu */
+        }
+
+        .image-container {
+            background: #f4f4f4;
+            border-radius: 12px;
+            padding: 20px;
+            color: #666;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .image-container img {
+            max-width: 100%; /* Obrazek nigdy nie wyjdzie poza kontener */
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Reszta Twoich stylów */
         .hero-article-preview {
             max-width: 800px;
             margin: 40px auto;
@@ -28,7 +70,7 @@
         }
         .hero-image-placeholder {
             width: 100%;
-            height: 100%;
+            height: 300px;
             background-color: #f3f4f6;
             border-radius: 16px;
             margin-bottom: 30px;
@@ -43,13 +85,22 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* Media query dla urządzeń mobilnych - tabela zmienia się w listę */
+        @media (max-width: 600px) {
+            .hero-table td {
+                display: block;
+                width: 100%;
+                text-align: center !important;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo">
-            <img src="logo.png" alt="DO Przodu">
+            <img src="logo.png" alt="DO Przodu" onerror="this.style.display='none';">
         </a>
         
         <div class="menu-container">
@@ -71,15 +122,77 @@
 
     <main class="container">
         <section class="hero">
-            <h1>Ruch <span>DO</span><br><span>D</span>emokracja <span>O</span>bywatelska - <span>DO</span> Przodu</h1>
+        
+            <table class="hero-table">
+                <tbody>
+                    <!-- Wiersz 1 -->
+                    <tr>
+                        <td style="text-align: center;">
+                            <div class="image-container">
+                                <img src="ix1.jpg">
+                            </div>
+                        </td>
+                        <td>
+                            <p style="margin: 0; line-height: 1.6;"><strong>Wyobraź sobie, że</strong> znów będzie głosowana jakaś ważna i kontrowersyjna ustawa. Wyobraź sobie, że jako OBYWATEL, możesz brać udział w tym głosowaniu! Jak? W aplikacji. Klikasz tak lub nie, jak uważasz. Nowe podatki, kolejny nowy bezwład: tak - nie. Aborcja: tak - nie. Strefa Czystego Transportu w Twoim mieście: tak - nie. Itd.</p>
+                        </td>
+                    </tr>
+                    <!-- Wiersz 2 -->
+                    <tr>
+                        <td class="mobile-order-text">
+                            <p style="margin: 0; line-height: 1.6;"><strong>Niemożliwe? To wyobraź sobie, że</strong> w sejmie są posłowie, którzy MUSZĄ zagłosować tak jak oczekuje tego społeczeństwo. Dlaczego muszą? Bo zanim mogli wystartować do parlamentu to podpisali umowę ze społeczeństwem - weksel na naprawdę dużą kasę. Nie wykonują woli społeczeństwa? Są usuwani i bankrutują, na ich miejsce przychodzą inni, lepsi. Władza przestaje traktować nas jak dzieci. Władza zaczyna wykonywać naszą wolę.</p>
+                        </td>
+                        <td style="text-align: center;">
+                            <div class="image-container">
+                                <img src="ix2.jpg">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Wiersz 3 -->
+                    <tr>
+                        <td style="text-align: center;">
+                            <div class="image-container">
+                                <img src="ix3.jpg">
+                            </div>
+                        </td>
+                        <td>
+                            <p style="margin: 0; line-height: 1.6;"><strong>Głosują więc zgodnie z wolą społeczeństwa.</strong> Na początku jest ich mniej ale stanowią języczek u wagi i ich głosy są decydujące. Mamy to! Projekt wyraża wolę narodu. Później będzie ich więcej bo społeczeństwo przekona się do nowego modelu.
+</p>
+                        </td>
+                    </tr>
+                    <!-- Wiersz 4 -->
+                    <tr>
+                        <td>
+                            <p style="margin: 0; line-height: 1.6;"><strong>Wyobraź sobie, że</strong> parlament nie mrozi już ale proceduje projekty społeczne i przyjmuje wolę społeczeństwa. To pozwoli szybko zamknąć sprawy ciągnące się od dekad. I przejść DO Przodu! Rozwój a nie jak chomik w kołowrotku.</p>
+                        </td>
+                        <td style="text-align: center;">
+                            <div class="image-container">
+                                <img src="ix4.jpg">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Wiersz 5 -->
+                    <tr>
+                        <td style="text-align: center;">
+                            <div class="image-container">
+                                <img src="ix5.jpg">
+                            </div>
+                        </td>
+                        <td>
+                            <p style="margin: 0; line-height: 1.6;"><strong>Wyobraź sobie, że Twój “wybraniec”</strong> się nie sprawdził. Dziś nic z tym nie zrobisz - siedzi x lat na stołku i bierze kasę. W nowym modelu możesz go oceniać regularnie. I jeśli większość uważa, że robi dobrą robotę to zostaje, nawet na wiele kadencji. Jeśli nie to się żegna a na jego miejsce wchodzi kolejny z listy.
+</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             
+            <h1>Ruch <span>DO</span><br><span>D</span>emokracja <span>O</span>bywatelska - <span>DO</span> Przodu</h1>
+                
             <div class="hero-article-preview">
                 <div class="hero-image-placeholder">
                     <img src="a00.jpg" alt="Anatomia iluzji" onerror="this.style.display='none'; this.parentNode.innerHTML='Anatomia Iluzji';">
                 </div>
 
                 <h2>Anatomia iluzji: Dlaczego twój głos liczy się tylko przez 5 sekund raz na 4 lata?</h2>
-                
 <p>Czy kiedykolwiek zastanawiałeś się nad matematyką swojej wolności?</p>
 
 <p>Spójrzmy na liczby, bo one nie kłamią – w przeciwieństwie do politycznych obietnic. Jedna kadencja parlamentu to równe cztery lata. To dokładnie 1461 dni, czyli 35 064 godziny. Idąc głębiej: to 2 103 840 minut lub – dla uzyskania pełnego obrazu – 126 230 400 sekund.</p>
@@ -122,7 +235,6 @@
 
 <p>Demokracja Obywatelska – DO Przodu. Przestań być tylko pasażerem. Czas, abyś to ty usiadł za kierownicą własnego państwa. Czy jesteś gotowy, by wreszcie w pełni skorzystać ze swojej wolności?</p>
 
-                
                 <div style="text-align: center; margin-top: 30px;">
                     <a href="articles.html" class="btn">Biała Księga</a>
                 </div>
