@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demokracja Obywatelska - DO Przodu</title>
 
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 1. TYTUŁ I OPIS (To widzi użytkownik w Google) -->
+<!-- 1. TYTUŁ I OPIS -->
+<title>Demokracja Obywatelska - Ruch DO Przodu</title>
 <meta name="description" content="Koniec ery obietnic, czas na erę decyzji. Ruch DO Przodu to hybrydowa demokracja bezpośrednia. System oddaje władzę obywatelom. Dołącz przed 2027.">
 <meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
 <meta name="author" content="Ruch Demokracja Obywatelska">
 <meta name="robots" content="index, follow">
 
-<!-- 2. IKONA STRONY (Favicon - wykorzystujemy logo) -->
+<!-- 2. IKONA STRONY -->
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 
-<!-- 3. OPEN GRAPH (Wygląd linku na Facebooku) -->
+<!-- 3. OPEN GRAPH (Facebook) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.ruchdo.pl/">
 <meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
@@ -27,29 +26,29 @@
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Demokracja Obywatelska">
 
-<!-- 4. TWITTER CARDS (Wygląd linku na X) -->
-<meta name="twitter:card" content="summary_large_image"> <!-- ZMIANA: Duża karta dla share.jpg -->
+<!-- 4. TWITTER CARDS (X) -->
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Ruch_DO_Przodu">
 <meta name="twitter:creator" content="@Ruch_DO_Przodu">
 <meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
 <meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
 <meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
 
-<!-- 5. CANONICAL (Ochrona SEO) -->
+<!-- 5. CANONICAL -->
 <link rel="canonical" href="https://www.ruchdo.pl/">
 
-<!-- 6. SCHEMA.ORG (Dane strukturalne dla Google) -->
+<!-- 6. SCHEMA.ORG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "PoliticalParty",
   "name": "Demokracja Obywatelska - Ruch DO Przodu",
-  "alternateName": ["Ruch DO", "DO Przodu", "Humanity OS Polska"],
+  "alternateName": ["Ruch DO", "DO Przodu"],
   "url": "https://www.ruchdo.pl",
   "logo": "https://www.ruchdo.pl/logo.png",
   "slogan": "Koniec ery obietnic, czas na erę decyzji",
   "foundingDate": "2024",
-  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej (Humanity OS) w Polsce.",
+  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61587363660799",
     "https://x.com/Ruch_DO_Przodu"
@@ -57,23 +56,96 @@
 }
 </script>
 
-<!-- Google tag (gtag.js) -->
+<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
 
+  gtag('js', new Date());
   gtag('config', 'G-PWT3NWMNNZ');
 </script>
 
-<script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {"siteId":4427604,"cookiePolicyId":37131130,"lang":"pl","storage":{"useSiteId":true}};
+<script>
+(function() {
+    // Sprawdzamy czy użytkownik już podjął decyzję
+    if (localStorage.getItem('cookie_consent')) {
+        var consentState = localStorage.getItem('cookie_consent');
+        if (consentState === 'granted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
+        return; // Jeśli decyzja była, nie wyświetlamy bannera
+    }
+
+    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
+    window.onload = function() {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            #cookie-banner {
+                position: fixed; bottom: 0; left: 0; right: 0;
+                background: #1a1a1a; color: #fff; padding: 20px;
+                display: flex; justify-content: center; align-items: center; gap: 20px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
+                font-family: Arial, sans-serif; flex-wrap: wrap;
+                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
+            }
+            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
+            .cookie-btn {
+                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
+                font-weight: bold; font-size: 14px; transition: 0.3s;
+            }
+            #btn-accept { background: #0056b3; color: white; }
+            #btn-accept:hover { background: #004494; }
+            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
+            #btn-decline:hover { border-color: #fff; color: #fff; }
+        `;
+        document.head.appendChild(style);
+
+        var banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.innerHTML = `
+            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
+            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
+            <div style="display:flex; gap:10px;">
+                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
+                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        // Logika przycisków
+        document.getElementById('btn-accept').onclick = function() {
+            localStorage.setItem('cookie_consent', 'granted');
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            banner.style.display = 'none';
+        };
+
+        document.getElementById('btn-decline').onclick = function() {
+            localStorage.setItem('cookie_consent', 'denied');
+            banner.style.display = 'none';
+        };
+    };
+})();
 </script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4427604.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
