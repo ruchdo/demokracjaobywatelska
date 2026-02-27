@@ -1,440 +1,477 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- 1. TYTUŁ I OPIS -->
-<title>Demokracja Obywatelska - Ruch DO Przodu</title>
-<meta name="description" content="Koniec ery obietnic, czas na erę decyzji. Ruch DO Przodu to hybrydowa demokracja bezpośrednia. System oddaje władzę obywatelom. Dołącz przed 2027.">
-<meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
-<meta name="author" content="Ruch Demokracja Obywatelska">
-<meta name="robots" content="index, follow">
-
-<!-- 2. IKONA STRONY -->
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-
-<!-- 3. OPEN GRAPH (Facebook) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ruchdo.pl/">
-<meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
-<meta property="og:description" content="Polityk jako interfejs, obywatel jako decydent. Poznaj system operacyjny dla nowoczesnej Polski.">
-<meta property="og:image" content="https://www.ruchdo.pl/share.jpg">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:site_name" content="Demokracja Obywatelska">
-
-<!-- 4. TWITTER CARDS (X) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@Ruch_DO_Przodu">
-<meta name="twitter:creator" content="@Ruch_DO_Przodu">
-<meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
-<meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
-<meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
-
-<!-- 5. CANONICAL -->
-<link rel="canonical" href="https://www.ruchdo.pl/">
-
-<!-- 6. SCHEMA.ORG -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "PoliticalParty",
-  "name": "Demokracja Obywatelska - Ruch DO Przodu",
-  "alternateName": ["Ruch DO", "DO Przodu"],
-  "url": "https://www.ruchdo.pl",
-  "logo": "https://www.ruchdo.pl/logo.png",
-  "slogan": "Koniec ery obietnic, czas na erę decyzji",
-  "foundingDate": "2024",
-  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61587363660799",
-    "https://x.com/Ruch_DO_Przodu"
-  ]
-}
-</script>
-
-<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-
-  gtag('js', new Date());
-  gtag('config', 'G-PWT3NWMNNZ');
-</script>
-
-<script>
-(function() {
-    // Sprawdzamy czy użytkownik już podjął decyzję
-    if (localStorage.getItem('cookie_consent')) {
-        var consentState = localStorage.getItem('cookie_consent');
-        if (consentState === 'granted') {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-        }
-        return; // Jeśli decyzja była, nie wyświetlamy bannera
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co dalej? Plan działania i kontakt · Ruch DO</title>
+  <meta name="description" content="Roadmapa 2026, poziomy zaangażowania, kogo szukamy i dane kontaktowe Ruchu Demokracja Obywatelska – DO Przodu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+      line-height: 1.7;
+      font-size: 17px;
     }
 
-    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
-    window.onload = function() {
-        var style = document.createElement('style');
-        style.innerHTML = `
-            #cookie-banner {
-                position: fixed; bottom: 0; left: 0; right: 0;
-                background: #1a1a1a; color: #fff; padding: 20px;
-                display: flex; justify-content: center; align-items: center; gap: 20px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
-                font-family: Arial, sans-serif; flex-wrap: wrap;
-                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
-            }
-            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
-            .cookie-btn {
-                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
-                font-weight: bold; font-size: 14px; transition: 0.3s;
-            }
-            #btn-accept { background: #0056b3; color: white; }
-            #btn-accept:hover { background: #004494; }
-            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
-            #btn-decline:hover { border-color: #fff; color: #fff; }
-        `;
-        document.head.appendChild(style);
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+    }
+    .nav-logo { font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; color: #fff; text-decoration: none; }
+    .nav-logo span { color: #c0392b; }
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: #8892a4; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: #c0392b; }
+    .nav-back svg { width: 16px; height: 16px; }
 
-        var banner = document.createElement('div');
-        banner.id = 'cookie-banner';
-        banner.innerHTML = `
-            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
-            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
-            <div style="display:flex; gap:10px;">
-                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
-                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
-            </div>
-        `;
-        document.body.appendChild(banner);
+    /* ── HERO ── */
+    .page-hero {
+      padding: 72px 6% 56px;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(192,57,43,0.15) 0%, transparent 70%), #0a0f1e;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #e74c3c; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 20px;
+      margin-bottom: 1.4rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900; line-height: 1.1;
+      color: #fff; letter-spacing: -1px;
+    }
+    .page-hero h1 em { font-style: normal; color: #c0392b; }
+    .page-hero p {
+      margin-top: 1.2rem; font-size: 1.05rem;
+      color: #8892a4; max-width: 620px;
+      margin-inline: auto; line-height: 1.7;
+    }
 
-        // Logika przycisków
-        document.getElementById('btn-accept').onclick = function() {
-            localStorage.setItem('cookie_consent', 'granted');
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-            banner.style.display = 'none';
-        };
+    /* ── WRAPPER ── */
+    .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 5% 80px; }
 
-        document.getElementById('btn-decline').onclick = function() {
-            localStorage.setItem('cookie_consent', 'denied');
-            banner.style.display = 'none';
-        };
-    };
-})();
-</script>    
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-    
-            .back-link { display: inline-block; margin-bottom: 20px; color: var(--do-green); text-decoration: none; font-weight: bold; }
-        
-            .hero-article-preview {
-            max-width: 900px; /* Nieco szerzej dla lepszej czytelności tabeli */
-            margin: 40px auto;
-            text-align: left;
-            background: #fff;
-            padding: 50px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-        
-        .hero-article-preview h1 {
-            color: var(--do-green);
-            font-size: 2.4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 0.7rem;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 800; line-height: 1.2;
+      color: #fff; letter-spacing: -0.4px;
+      margin-bottom: 1.6rem;
+    }
 
-        .lead-text {
-            font-size: 1.1rem;
-            color: #4b5563;
-            margin-bottom: 40px;
-            border-left: 4px solid var(--do-green);
-            padding-left: 20px;
-        }
+    section.block { padding: 56px 0 0; }
 
-        /* Stylizacja Tabeli - Rounded & Modern */
-        .table-container {
-            overflow-x: auto; /* Przewijanie na mobile */
-            margin: 30px 0;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
+    /* ── ROADMAP TABLE ── */
+    .roadmap-table {
+      width: 100%; border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+    .roadmap-table thead tr {
+      background: #111827;
+      border-bottom: 2px solid #c0392b;
+    }
+    .roadmap-table thead th {
+      padding: 0.9rem 1.2rem;
+      text-align: left; font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: #c0392b;
+    }
+    .roadmap-table tbody tr {
+      border-bottom: 1px solid #1e293b;
+      transition: background 0.15s;
+    }
+    .roadmap-table tbody tr:hover { background: #111827; }
+    .roadmap-table tbody td {
+      padding: 1rem 1.2rem;
+      font-size: 0.93rem; color: #c8cdd8;
+      vertical-align: top;
+    }
+    .roadmap-table tbody td:first-child {
+      font-weight: 800; color: #fff;
+      white-space: nowrap;
+    }
+    .phase-badge {
+      display: inline-block;
+      padding: 0.2rem 0.7rem; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.5px; white-space: nowrap;
+    }
+    .ph1 { background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.35); color: #e07060; }
+    .ph2 { background: rgba(243,156,18,0.12);  border: 1px solid rgba(243,156,18,0.3);  color: #f0b040; }
+    .ph3 { background: rgba(52,152,219,0.12);  border: 1px solid rgba(52,152,219,0.3);  color: #5aacdd; }
+    .ph4 { background: rgba(46,204,113,0.12);  border: 1px solid rgba(46,204,113,0.3);  color: #50d080; }
 
-        .hero-article-preview table {
-            width: 100%;
-            border-collapse: separate; /* Kluczowe dla border-radius */
-            border-spacing: 0;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            overflow: hidden;
-            font-size: 0.95rem;
-        }
+    /* ── LEVELS ── */
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px; margin-top: 0.5rem;
+    }
+    .level-card {
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 12px; padding: 1.5rem 1.3rem;
+      transition: border-color 0.2s;
+    }
+    .level-card:hover { border-color: #c0392b; }
+    .level-num {
+      font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 0.4rem;
+    }
+    .level-title {
+      font-size: 1rem; font-weight: 800; color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .level-time {
+      font-size: 0.78rem; color: #f39c12;
+      font-weight: 600; margin-bottom: 0.6rem;
+    }
+    .level-desc { font-size: 0.86rem; color: #8892a4; line-height: 1.55; }
 
-        .hero-article-preview th {
-            background-color: #f3f4f6;
-            color: var(--do-grey);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.8rem;
-            padding: 16px;
-            border-bottom: 2px solid #e5e7eb;
-            text-align: left;
-        }
+    /* ── KOGO SZUKAMY ── */
+    .roles-list {
+      list-style: none; margin-top: 0.5rem;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .roles-list li {
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 10px; padding: 1rem 1.3rem;
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      font-size: 0.93rem; color: #c8cdd8;
+      transition: border-color 0.2s;
+    }
+    .roles-list li:hover { border-color: #c0392b; }
+    .roles-list li::before {
+      content: "→";
+      color: #c0392b; font-weight: 800;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .roles-list li strong { color: #fff; }
 
-        .hero-article-preview td {
-            padding: 16px;
-            border-bottom: 1px solid #f3f4f6;
-            color: #374151;
-            vertical-align: top;
-        }
+    /* ── KRYTYKA ── */
+    .kritik-box {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 12px 12px 0;
+      padding: 2rem 1.8rem;
+      margin-top: 0.5rem;
+    }
+    .kritik-box p { font-size: 0.95rem; color: #c8cdd8; line-height: 1.75; margin-bottom: 1.2rem; }
+    .kritik-box p:last-of-type { margin-bottom: 1.4rem; }
 
-        .hero-article-preview tr:last-child td {
-            border-bottom: none;
-        }
+    /* ── FAQ ── */
+    .faq-list {
+      display: flex; flex-direction: column; gap: 12px;
+      margin-top: 0.5rem;
+    }
+    details {
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 10px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    details[open] { border-color: #c0392b; }
+    summary {
+      padding: 1.1rem 1.4rem;
+      font-size: 0.96rem; font-weight: 700; color: #fff;
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: #c0392b; font-size: 1.2rem; font-weight: 900;
+      flex-shrink: 0; transition: transform 0.2s;
+    }
+    details[open] summary::after { content: "−"; }
+    .faq-body {
+      padding: 0 1.4rem 1.2rem;
+      font-size: 0.92rem; color: #8892a4; line-height: 1.7;
+    }
 
-        .hero-article-preview tr:hover td {
-            background-color: #f9fafb;
-        }
+    /* ── KONTAKT ── */
+    .contact-box {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 2.4rem 2rem;
+      margin-top: 0.5rem;
+    }
+    .contact-box p {
+      font-size: 0.95rem; color: #c8cdd8;
+      line-height: 1.75; margin-bottom: 1rem;
+    }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: rgba(192,57,43,0.1);
+      border: 1.5px solid rgba(192,57,43,0.4);
+      color: #fff; font-size: 1.1rem; font-weight: 800;
+      padding: 0.85rem 1.6rem; border-radius: 10px;
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: background 0.2s, border-color 0.2s;
+      margin: 0.8rem 0 1.4rem;
+      display: block; text-align: center;
+    }
+    .contact-email:hover { background: rgba(192,57,43,0.2); border-color: #c0392b; }
+    .subject-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 0.5rem;
+    }
+    .subject-tag {
+      background: #0a0f1e; border: 1px solid #1e293b;
+      color: #8892a4; font-size: 0.8rem; font-weight: 600;
+      padding: 0.3rem 0.8rem; border-radius: 20px;
+      font-family: 'Inter', monospace;
+    }
+    .contact-note { font-size: 0.82rem; color: #8892a4; margin-top: 1rem; }
 
-        /* Content Boxes - Kafelki dla sekcji */
-        .content-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
+    /* ── BACK ── */
+    .back-section {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1.5px solid #1e293b;
+      color: #c8cdd8; padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-btn:hover { border-color: #c0392b; color: #fff; }
+    .back-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-        .content-box:hover {
-            border-color: var(--do-green);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-            background: #fff;
-        }
+    /* ── FOOTER ── */
+    footer {
+      background: #080d1a; border-top: 1px solid #1e293b;
+      padding: 2.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.83rem; color: #4a5568; }
+    footer a { color: #8892a4; text-decoration: none; }
+    footer a:hover { color: #c0392b; }
 
-        .content-box h2 {
-            color: var(--do-green);
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(22, 163, 74, 0.1);
-            padding-bottom: 15px;
-        }
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-        .content-box ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .content-box li {
-            margin-bottom: 12px;
-            color: #4b5563;
-            line-height: 1.6;
-        }
-        
-        .content-box li strong {
-            color: var(--do-grey);
-        }
-
-        /* FAQ Specific */
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        .faq-item strong {
-            display: block;
-            color: var(--do-grey);
-            margin-bottom: 5px;
-            font-size: 1.05rem;
-        }
-        .faq-item:last-child {
-            margin-bottom: 0;
-        }
-    </style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .roadmap-table thead { display: none; }
+      .roadmap-table tbody td { display: block; padding: 0.4rem 1rem; }
+      .roadmap-table tbody td:first-child { padding-top: 1rem; }
+      .roadmap-table tbody tr { display: block; padding-bottom: 0.8rem; margin-bottom: 0.4rem; border: 1px solid #1e293b; border-radius: 10px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo">
-            <img src="logo.png" alt="DO Przodu">
-        </a>
-        
-        <div class="menu-container">
-            <button class="hamburger" id="menuToggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Start</a>
-                <a href="contact.html">Co dalej</a>
-                <a href="articles.html">Biała Księga</a>
-                <a href="do_przodu.m4a" target="_blank">Posłuchaj</a>
-                <a href="inside.html">Od środka</a>
-                <a href="contact.html">Kontakt</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="hero">
-            <div class="hero-article-preview">
-                <h1>CO DALEJ? Plan działania!</h1>
-                <p class="lead-text">Jesteś tu, bo masz dość gadania – chcesz <strong>DZIAŁAĆ</strong>. Nie budujemy kolejnej partii obietnic, ale system sprawowania władzy. To plan przejścia od teorii do realnego wpływu na państwo.</p>
-                
-                <h2>🗺️ ROADMAPA 2026: Od zera do sprawstwa</h2>
-                
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Faza</th>
-                               
-                                <th>Cel Główny</th>
-                                <th>Twoja rola</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Fundamenty</strong></td>
-                                
-                                <td>Budowa zespołu i poszukiwanie zaangażowanych osób</td>
-                                <td>Zgłoś się do zespołu</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Budowa MVP</strong></td>
-                                
-                                <td>Powstanie wczesnej wersji platformy (Alpha)</td>
-                                <td>Zostań testerem/ką</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Testy Bojowe</strong></td>
-                                
-                                <td>Pierwsze pilotowe głosowanie na żywym organizmie</td>
-                                <td>Oddaj pierwszy głos</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Skalowanie</strong></td>
-                                
-                                <td>Rejestracja partii i struktury w całej Polsce</td>
-                                <td>Buduj regiony</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="content-box">
-                    <h2>⚡ POZIOMY ZAANGAŻOWANIA</h2>
-                    <p style="margin-bottom: 20px;">Dostosuj swoją aktywność do możliwości. Traktujemy Cię jak dorosłego – każda sekunda Twojego czasu to inwestycja w wolność.</p>
-                    <ul>
-                        <li><strong>Level 1: Obserwator (15 min/tydz.)</strong> – Podawaj dalej nasze posty. Buduj zasięg tam, gdzie inni go blokują.</li>
-                        <li><strong>Level 2: Aktywista (1-2h/tydz.)</strong> – Komentuj, zapraszaj merytoryczne osoby, bierz udział w ankietach przedwdrożeniowych.</li>
-                        <li><strong>Level 3: Wolontariusz (4-6h/tydz.)</strong> – Dołącz do grupy roboczej (IT, grafika, prawo, logistyka, audyt).</li>
-                        <li><strong>Level 4: Lider (8-10h/tydz.)</strong> – Buduj struktury regionalne i przygotowuj się do roli „Interfejsu” w 2027.</li>
-                    </ul>
-                </div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Ruch <span>DO</span></a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Strona główna
+  </a>
+</nav>
 
-                <div class="content-box">
-                    <h2>🔥 KOGO POTRZEBUJEMY OD ZARAZ?</h2>
-                    <p style="margin-bottom: 20px;">Nic nie zbuduje się samo. Szukamy profesjonalistów, którzy rozumieją, że technologia to wolność:</p>
-                    <ul>
-                        <li><strong>Obserwatorzy i Aktywiści w Social Mediach</strong> – lajkuj, podawaj, komentuj, wrzucaj swoje posty.</li>
-                        <li><strong>Koordynator/ka Wolontariuszy</strong> – ktoś, kto zapanuje nad rosnącą energią społeczności.</li>                    
-                        <li><strong>Prawnik/Prawniczka</strong> – musimy bezpiecznie przejść proces formalizacji ruchu i partii.</li>
-                        <li><strong>Fundraiser/ka</strong> – potrzebujemy paliwa na serwery, kampanie i rozwój narzędzi.</li>
-                        <li><strong>Dev-Team (Blockchain / Web3 / Fullstack)</strong> – priorytet. Musimy stworzyć bezpieczny silnik dla naszej demokracji.</li>
-                    </ul>
-                </div>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-badge">Plan Działania · Kontakt</div>
+  <h1>Masz dość gadania?<br /><em>Czas działać.</em></h1>
+  <p>Nie budujemy kolejnej partii obietnic, ale system sprawowania władzy. To plan przejścia od teorii do realnego wpływu na państwo.</p>
+</div>
 
-                <div class="content-box">
-                    <h2>🛡️ SZUKAMY „DLACZEGO NIE” (Kultura Otwartej Krytyki)</h2>
-                    <p>Większość ruchów politycznych boi się krytyki. My jej pożądamy. Jeśli uważasz, że Demokracja Obywatelska ma słabe punkty, że coś „nie zadziała”, albo widzisz luki w bezpieczeństwie – chcemy Cię usłyszeć.</p>
-                    <p>Nie obrażamy się na trudne pytania. Głosy sceptyków pozwalają nam dostrzec to, co jest do poprawienia, zanim system wejdzie w życie. Jeśli potrafisz merytorycznie punktować błędy – jesteś dla nas skarbem. Twoja krytyka to dla nas darmowy audyt, który czyni projekt silniejszym.</p>
-                    <p style="color:var(--do-green); font-weight:600; margin-top: 15px;">👉 Zostań naszym krytykiem / audytorem</p>
-                </div>
+<div class="page-wrapper">
 
-                <div class="content-box">
-                    <h2>❓ FAQ (Krótko i na temat)</h2>
-                    <div class="faq-item">
-                        <strong>Czy to legalne?</strong>
-                        <p>Tak. Prawo pozwala nam się organizować. Najpierw jako ruch, potem jako partia, która zmieni prawo od środka.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <strong>Nie znacie się na polityce!</strong>
-                        <p>I bardzo dobrze. Znamy się na zarządzaniu, technologii i logice. Politycy od lat pokazują, że „znanie się na polityce” to synonim bezradności.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <strong>Skąd macie pieniądze?</strong>
-                        <p>Z crowdfundingu i własnych oszczędności. Żadnych oligarchów, żadnych dotacji z budżetu na starcie. Tylko czysta energia obywatelska.</p>
-                    </div>
-                </div>
+  <!-- ══ ROADMAPA ══ -->
+  <section class="block reveal">
+    <div class="section-label">Roadmapa 2026</div>
+    <h2>🗺️ Od zera do sprawstwa</h2>
+    <table class="roadmap-table">
+      <thead>
+        <tr>
+          <th>Faza</th>
+          <th>Cel główny</th>
+          <th>Twoja rola</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="phase-badge ph1">Fundamenty</span></td>
+          <td>Budowa zespołu i poszukiwanie zaangażowanych osób</td>
+          <td>Zgłoś się do zespołu</td>
+        </tr>
+        <tr>
+          <td><span class="phase-badge ph2">Budowa MVP</span></td>
+          <td>Powstanie wczesnej wersji platformy (Alpha)</td>
+          <td>Zostań testerem/ką</td>
+        </tr>
+        <tr>
+          <td><span class="phase-badge ph3">Testy Bojowe</span></td>
+          <td>Pierwsze pilotowe głosowanie na żywym organizmie</td>
+          <td>Oddaj pierwszy głos</td>
+        </tr>
+        <tr>
+          <td><span class="phase-badge ph4">Skalowanie</span></td>
+          <td>Rejestracja partii i struktury w całej Polsce</td>
+          <td>Buduj regiony</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-                <div class="content-box">
-                    <h2>📬 KONTAKT I DZIAŁANIE</h2>
-                    <p>Nie czekaj na zaproszenie. Jeśli czujesz, że ten system ma sens – napisz do nas teraz.</p>
-                    <p>Chcesz dołączyć do Dev-Teamu? Chcesz punktować słabe strony projektu? Chcesz zostać liderem?</p>
-                    <p style="margin-top: 20px;">Napisz bezpośrednio na: <a href="mailto:kontakt@ruchdo.pl" style="color:var(--do-green); font-weight:700; text-decoration:none;">📧 kontakt@ruchdo.pl</a></p>
-                    <p>W tytule maila wpisz krótko:<br>
-                    <code style="background:#f3f4f6; padding:8px 12px; border-radius:6px; display:inline-block; margin-top:10px; color:var(--do-grey); font-family: 'Inter', monospace; border: 1px solid #e5e7eb;">IT / Krytyka / Wolontariat / Media / Wsparcie</code></p>
-                    
-                    <div style="margin-top: 30px; border-top: 2px solid #e5e7eb; padding-top: 20px;">
-                        <p style="font-weight: 800; color: var(--do-grey); font-size: 1.1rem; margin-bottom: 0;">Demokracja Obywatelska - DO Przodu</p>
-                        <p style="color: #4b5563; font-style: italic;">Obywatele decydują. Politycy wykonują.</p>
-                    </div>
-                </div>
+  <!-- ══ POZIOMY ZAANGAŻOWANIA ══ -->
+  <section class="block reveal">
+    <div class="section-label">Twój wybór</div>
+    <h2>⚡ Poziomy zaangażowania</h2>
+    <div class="levels-grid">
+      <div class="level-card">
+        <div class="level-num">Level 1</div>
+        <div class="level-title">Obserwator</div>
+        <div class="level-time">15 min / tydzień</div>
+        <div class="level-desc">Podawaj dalej nasze posty. Buduj zasięg tam, gdzie inni go blokują.</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">Level 2</div>
+        <div class="level-title">Aktywista</div>
+        <div class="level-time">1–2 h / tydzień</div>
+        <div class="level-desc">Komentuj, zapraszaj merytoryczne osoby, bierz udział w ankietach przedwdrożeniowych.</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">Level 3</div>
+        <div class="level-title">Wolontariusz</div>
+        <div class="level-time">4–6 h / tydzień</div>
+        <div class="level-desc">Dołącz do grupy roboczej: IT, grafika, prawo, logistyka, audyt.</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">Level 4</div>
+        <div class="level-title">Lider</div>
+        <div class="level-time">8–10 h / tydzień</div>
+        <div class="level-desc">Buduj struktury regionalne i przygotowuj się do roli „Interfejsu" w 2027.</div>
+      </div>
+    </div>
+  </section>
 
-<a href="about.html" class="back-link">&rarr; O autorze</a>
-                    
-            </div>
-        </section>
-    </main>
+  <!-- ══ KOGO SZUKAMY ══ -->
+  <section class="block reveal">
+    <div class="section-label">Rekrutacja</div>
+    <h2>🔥 Kogo potrzebujemy od zaraz?</h2>
+    <ul class="roles-list">
+      <li><span><strong>Obserwatorzy i Aktywiści w Social Mediach</strong> – lajkuj, podawaj, komentuj, wrzucaj swoje posty.</span></li>
+      <li><span><strong>Koordynator/ka Wolontariuszy</strong> – ktoś, kto zapanuje nad rosnącą energią społeczności.</span></li>
+      <li><span><strong>Prawnik/Prawniczka</strong> – musimy bezpiecznie przejść proces formalizacji ruchu i partii.</span></li>
+      <li><span><strong>Fundraiser/ka</strong> – potrzebujemy paliwa na serwery, kampanie i rozwój narzędzi.</span></li>
+      <li><span><strong>Dev-Team (Blockchain / Web3 / Fullstack)</strong> – priorytet. Musimy stworzyć bezpieczny silnik dla naszej demokracji.</span></li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>&copy; Demokracja Obywatelska - DO Przodu</p>
-        <p style="margin-top: 10px; opacity: 0.5;">Polska 2.0 - Projekt Open Source</p>
-    </footer>
+  <!-- ══ OTWARTA KRYTYKA ══ -->
+  <section class="block reveal">
+    <div class="section-label">Kultura Otwartej Krytyki</div>
+    <h2>🛡️ Szukamy „Dlaczego nie"</h2>
+    <div class="kritik-box">
+      <p>Większość ruchów politycznych boi się krytyki. My jej <strong>pożądamy</strong>. Jeśli uważasz, że Demokracja Obywatelska ma słabe punkty, że coś „nie zadziała", albo widzisz luki w bezpieczeństwie – chcemy Cię usłyszeć.</p>
+      <p>Nie obrażamy się na trudne pytania. Głosy sceptyków pozwalają nam dostrzec to, co jest do poprawienia, zanim system wejdzie w życie. Twoja krytyka to dla nas <strong>darmowy audyt</strong>, który czyni projekt silniejszym.</p>
+      <a href="mailto:kontakt@ruchdo.pl?subject=Krytyka" class="contact-email">👉 Zostań naszym krytykiem / audytorem → kontakt@ruchdo.pl</a>
+    </div>
+  </section>
 
-    <script>
-        const btn = document.getElementById('menuToggle');
-        const nav = document.getElementById('navLinks');
-        
-        btn.addEventListener('click', () => {
-            nav.classList.toggle('show');
-        });
+  <!-- ══ FAQ ══ -->
+  <section class="block reveal">
+    <div class="section-label">Odpowiedzi</div>
+    <h2>❓ FAQ – krótko i na temat</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Czy to legalne?</summary>
+        <div class="faq-body">Tak. Prawo pozwala nam się organizować. Najpierw jako ruch, potem jako partia, która zmieni prawo od środka.</div>
+      </details>
+      <details>
+        <summary>Nie znacie się na polityce!</summary>
+        <div class="faq-body">I bardzo dobrze. Znamy się na zarządzaniu, technologii i logice. Politycy od lat pokazują, że „znanie się na polityce" to synonim bezradności.</div>
+      </details>
+      <details>
+        <summary>Skąd macie pieniądze?</summary>
+        <div class="faq-body">Z crowdfundingu i własnych oszczędności. Żadnych oligarchów, żadnych dotacji z budżetu na starcie. Tylko czysta energia obywatelska.</div>
+      </details>
+    </div>
+  </section>
 
-        window.addEventListener('click', (e) => {
-            if (!btn.contains(e.target) && !nav.contains(e.target)) {
-                nav.classList.remove('show');
-            }
-        });
-    </script>
+  <!-- ══ KONTAKT ══ -->
+  <section class="block reveal">
+    <div class="section-label">Działaj teraz</div>
+    <h2>📬 Kontakt i działanie</h2>
+    <div class="contact-box">
+      <p>Nie czekaj na zaproszenie. Jeśli czujesz, że ten system ma sens – <strong>napisz do nas teraz</strong>. Chcesz dołączyć do Dev-Teamu? Chcesz punktować słabe strony projektu? Chcesz zostać liderem?</p>
+      <a href="mailto:kontakt@ruchdo.pl" class="contact-email">📧 kontakt@ruchdo.pl</a>
+      <p class="contact-note">W tytule maila wpisz krótko, czym chcesz się zająć:</p>
+      <div class="subject-tags">
+        <span class="subject-tag">IT</span>
+        <span class="subject-tag">Krytyka</span>
+        <span class="subject-tag">Wolontariat</span>
+        <span class="subject-tag">Media</span>
+        <span class="subject-tag">Wsparcie</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWRÓT -->
+  <div class="back-section reveal">
+    <a href="index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Powrót do strony głównej
+    </a>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size:0.9rem; color:#8892a4; margin-bottom:0.4rem;">
+    <strong style="color:#fff;">Ruch Demokracja Obywatelska – DO Przodu</strong>
+  </p>
+  <p>RuchDO.pl – Open Source. Zamykamy sprawy dzielące. Idziemy DO PRZODU.</p>
+  <p style="margin-top:0.8rem;">
+    <a href="about.html" target="_self">O nas</a> &nbsp;·&nbsp;
+    <a href="inside.html" target="_self">Od środka</a> &nbsp;·&nbsp;
+    <a href="contact.html" target="_self">Kontakt</a>
+  </p>
+  <p style="margin-top:0.8rem;">
+    <a href="https://x.com/Ruch_DO_Przodu" target="_blank">X.com</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/profile.php?id=61587363660799" target="_blank">Facebook</a>  
+  </p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>

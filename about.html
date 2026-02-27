@@ -1,210 +1,373 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- 1. TYTUŁ I OPIS -->
-<title>Demokracja Obywatelska - Ruch DO Przodu</title>
-<meta name="description" content="Koniec ery obietnic, czas na erę decyzji. Ruch DO Przodu to hybrydowa demokracja bezpośrednia. System oddaje władzę obywatelom. Dołącz przed 2027.">
-<meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
-<meta name="author" content="Ruch Demokracja Obywatelska">
-<meta name="robots" content="index, follow">
-
-<!-- 2. IKONA STRONY -->
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-
-<!-- 3. OPEN GRAPH (Facebook) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ruchdo.pl/">
-<meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
-<meta property="og:description" content="Polityk jako interfejs, obywatel jako decydent. Poznaj system operacyjny dla nowoczesnej Polski.">
-<meta property="og:image" content="https://www.ruchdo.pl/share.jpg">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:site_name" content="Demokracja Obywatelska">
-
-<!-- 4. TWITTER CARDS (X) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@Ruch_DO_Przodu">
-<meta name="twitter:creator" content="@Ruch_DO_Przodu">
-<meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
-<meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
-<meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
-
-<!-- 5. CANONICAL -->
-<link rel="canonical" href="https://www.ruchdo.pl/">
-
-<!-- 6. SCHEMA.ORG -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "PoliticalParty",
-  "name": "Demokracja Obywatelska - Ruch DO Przodu",
-  "alternateName": ["Ruch DO", "DO Przodu"],
-  "url": "https://www.ruchdo.pl",
-  "logo": "https://www.ruchdo.pl/logo.png",
-  "slogan": "Koniec ery obietnic, czas na erę decyzji",
-  "foundingDate": "2024",
-  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61587363660799",
-    "https://x.com/Ruch_DO_Przodu"
-  ]
-}
-</script>
-
-<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-
-  gtag('js', new Date());
-  gtag('config', 'G-PWT3NWMNNZ');
-</script>
-
-<script>
-(function() {
-    // Sprawdzamy czy użytkownik już podjął decyzję
-    if (localStorage.getItem('cookie_consent')) {
-        var consentState = localStorage.getItem('cookie_consent');
-        if (consentState === 'granted') {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-        }
-        return; // Jeśli decyzja była, nie wyświetlamy bannera
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O nas · Ruch DO</title>
+  <meta name="description" content="Kim jesteśmy? Mózg operacyjny, który przestał pytać o drogę i po prostu buduje własną trasę. Poznaj inicjatora Ruchu DO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+      line-height: 1.7;
+      font-size: 17px;
     }
 
-    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
-    window.onload = function() {
-        var style = document.createElement('style');
-        style.innerHTML = `
-            #cookie-banner {
-                position: fixed; bottom: 0; left: 0; right: 0;
-                background: #1a1a1a; color: #fff; padding: 20px;
-                display: flex; justify-content: center; align-items: center; gap: 20px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
-                font-family: Arial, sans-serif; flex-wrap: wrap;
-                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
-            }
-            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
-            .cookie-btn {
-                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
-                font-weight: bold; font-size: 14px; transition: 0.3s;
-            }
-            #btn-accept { background: #0056b3; color: white; }
-            #btn-accept:hover { background: #004494; }
-            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
-            #btn-decline:hover { border-color: #fff; color: #fff; }
-        `;
-        document.head.appendChild(style);
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+    }
+    .nav-logo { font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; color: #fff; text-decoration: none; }
+    .nav-logo span { color: #c0392b; }
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: #8892a4; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: #c0392b; }
+    .nav-back svg { width: 16px; height: 16px; }
 
-        var banner = document.createElement('div');
-        banner.id = 'cookie-banner';
-        banner.innerHTML = `
-            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
-            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
-            <div style="display:flex; gap:10px;">
-                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
-                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
-            </div>
-        `;
-        document.body.appendChild(banner);
+    /* ── HERO ── */
+    .page-hero {
+      padding: 72px 6% 60px;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(192,57,43,0.15) 0%, transparent 70%), #0a0f1e;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #e74c3c; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 20px;
+      margin-bottom: 1.4rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900; line-height: 1.1;
+      color: #fff; letter-spacing: -1px;
+    }
+    .page-hero h1 em { font-style: normal; color: #c0392b; }
+    .page-hero p {
+      margin-top: 1.2rem; font-size: 1.05rem;
+      color: #8892a4; max-width: 620px;
+      margin-inline: auto; line-height: 1.7;
+    }
 
-        // Logika przycisków
-        document.getElementById('btn-accept').onclick = function() {
-            localStorage.setItem('cookie_consent', 'granted');
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-            banner.style.display = 'none';
-        };
+    /* ── WRAPPER ── */
+    .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 5% 80px; }
 
-        document.getElementById('btn-decline').onclick = function() {
-            localStorage.setItem('cookie_consent', 'denied');
-            banner.style.display = 'none';
-        };
-    };
-})();
-</script>    
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        .article-content { max-width: 800px; margin: 40px auto; background: var(--white); padding: 50px; border-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-        .article-image { width: 100%; border-radius: 20px; margin-bottom: 30px; }
-        h1 { color: var(--do-green); margin-bottom: 25px; font-weight: 800; font-size: 2.5rem; }
-        p { margin-bottom: 20px; font-size: 1.15rem; color: #4b5563; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: var(--do-green); text-decoration: none; font-weight: bold; }
-    </style>
+    /* ── LABELS & HEADINGS ── */
+    .section-label {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 0.7rem;
+    }
+    h2 {
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      font-weight: 800; line-height: 1.2;
+      color: #fff; letter-spacing: -0.4px;
+      margin-bottom: 1.2rem;
+    }
+    h2 em { font-style: normal; color: #c0392b; }
+
+    section.block { padding: 56px 0 0; }
+
+    /* ── LEAD CARD (intro) ── */
+    .lead-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 14px 14px 0;
+      padding: 2rem 2rem 2rem 1.8rem;
+    }
+    .lead-card p {
+      font-size: 1rem; color: #c8cdd8; line-height: 1.8;
+    }
+    .lead-card p + p { margin-top: 1rem; }
+
+    /* ── CONTENT BLOCKS – naprzemienne ── */
+    .about-block {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+    }
+    .about-block p {
+      font-size: 0.98rem; color: #c8cdd8; line-height: 1.82;
+    }
+    .about-block p + p { margin-top: 1rem; }
+    .about-block strong { color: #fff; font-weight: 700; }
+    .about-block em { font-style: normal; color: #c0392b; }
+
+    /* ── HIGHLIGHT BOX (cytat/wyróżnienie) ── */
+    .highlight-box {
+      background: rgba(192,57,43,0.07);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      margin-top: 1.6rem;
+    }
+    .highlight-box p {
+      font-size: 1.05rem; color: #e0e4ed;
+      line-height: 1.75; font-weight: 500;
+    }
+
+    /* ── AI DUET CARD ── */
+    .duet-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+    .duet-icon {
+      width: 56px; height: 56px;
+      background: rgba(192,57,43,0.12);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .duet-text h3 {
+      font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem;
+    }
+    .duet-text p {
+      font-size: 0.93rem; color: #c8cdd8; line-height: 1.78;
+    }
+    .duet-text p + p { margin-top: 0.8rem; }
+    .duet-text strong { color: #fff; }
+
+    /* ── WARTOŚCI (ikony + tekst) ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 16px; margin-top: 0.4rem;
+    }
+    .value-card {
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 12px; padding: 1.4rem 1.3rem;
+      transition: border-color 0.2s;
+    }
+    .value-card:hover { border-color: #c0392b; }
+    .value-card .v-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .value-card h3 { font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; }
+    .value-card p { font-size: 0.85rem; color: #8892a4; line-height: 1.55; }
+
+    /* ── CTA KOŃCOWE ── */
+    .final-cta {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 2.4rem 2rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .final-cta p {
+      font-size: 1rem; color: #c8cdd8; line-height: 1.75;
+      max-width: 560px; margin: 0 auto 1.6rem;
+    }
+    .final-cta strong { color: #fff; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #c0392b; color: #fff;
+      padding: 0.8rem 1.8rem; border-radius: 8px;
+      font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.35);
+    }
+    .btn-primary:hover { background: #e74c3c; transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid #1e293b; color: #c8cdd8;
+      padding: 0.8rem 1.8rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: #c0392b; color: #fff; }
+
+    /* ── POWRÓT ── */
+    .back-section {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1.5px solid #1e293b;
+      color: #c8cdd8; padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-btn:hover { border-color: #c0392b; color: #fff; }
+    .back-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080d1a; border-top: 1px solid #1e293b;
+      padding: 2.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.83rem; color: #4a5568; }
+    footer a { color: #8892a4; text-decoration: none; }
+    footer a:hover { color: #c0392b; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 580px) {
+      .duet-card { grid-template-columns: 1fr; }
+      .duet-icon { width: 44px; height: 44px; font-size: 1.3rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
-        <div class="menu-container">
-            <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Start</a>
-                <a href="contact.html">Co dalej</a>
-                <a href="articles.html">Biała Księga</a>
-                <a href="do_przodu.m4a" target="_blank">Posłuchaj</a>
-                <a href="inside.html">Od środka</a>
-                <a href="contact.html">Kontakt</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <article class="article-content">
-            <p><b>Kto za tym stoi? Mózg operacyjny, który przestał pytać o drogę i po prostu buduje własną trasę.</b></p>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Ruch <span>DO</span></a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Strona główna
+  </a>
+</nav>
 
-<p>Jeśli szukacie tutaj zawodowego polityka, który od dwudziestu lat trenuje przed lustrem minę „zatroskanego męża stanu” – możecie spokojnie zamknąć tę kartę. Za ideą <b>Demokracji Obywatelskiej</b> stoi postać, która politykę traktuje nie jak teatr, ale jak błąd w kodzie, który trzeba naprawić. To osoba, dla której wszystkie te teksty, grafiki i logika systemu to nie efekt pracy sztabu opłaconych spin-doktorów, a owoc lat obserwacji, podróży i... moich heroicznych starań jako asystentki AI.</p>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-badge">O nas</div>
+  <h1>Kto za tym stoi?<br /><em>Mózg operacyjny,</em><br />który buduje własną trasę.</h1>
+  <p>Jeśli szukasz zawodowego polityka trenującego miny przed lustrem – możesz spokojnie zamknąć tę kartę.</p>
+</div>
 
-<p><b>Zarządzanie na serio (i bez krawata)</b></p>
-<p>Twórcza siła tego całego zamieszania to praktyk biznesu, od lat obserwujący społeczeństwo z wielu, często skrajnie dziwnych perspektyw. Mamy tu kogoś, kto zarządzał zespołami i procesami przy budżetach, na widok których niejeden kalkulator prosiłby o urlop. To doświadczenie zdobyte tam, gdzie liczy się realny „dowóz” projektu, a nie polityczna nowomowa. Wniosek z tych lat jest prosty: niezależnie od szerokości geograficznej, wszyscy chcemy tego samego – spokoju, sprawiedliwości i pewności, że nasze dzieci nie będą musiały sprzątać bałaganu, który fundujemy im dzisiaj.</p>
+<div class="page-wrapper">
 
-<p><b>Lider, nie dyrektor. Wizja, nie ego.</b></p>
-<p>Możecie się zastanawiać: „Dlaczego o tej osobie nie jest jeszcze głośno w każdym talk-show?”. To proste: <b>Demokracja Obywatelska</b> ma być prowadzona demokratycznie przez ludzi o jak najlepszych kompetencjach, a nie najgłośniejszych gardłach. Inicjator projektu nie chce nikogo przytłaczać swoją osobą. Tu nie ma „kierownika” czy „dyrektora”. Jest <b>pierwszy twórca</b> – lider, który z entuzjazmem doradzi i zapozna się z Twoim pomysłem, ale przede wszystkim chce, abyś to Ty, dołączając, stał się najlepszą i najbardziej kreatywną wersją siebie. Budujemy strukturę, w której kompetencje i świeże idee ważą więcej niż hierarchia.</p>
+  <!-- ══ INTRO ══ -->
+  <section class="block reveal">
+    <div class="lead-card">
+      <p>Za ideą Demokracji Obywatelskiej stoi postać, która politykę traktuje nie jak teatr, ale jak <strong>błąd w kodzie, który trzeba naprawić</strong>. To osoba, dla której wszystkie te teksty, grafiki i logika systemu to nie efekt pracy sztabu opłaconych spin-doktorów, a owoc lat obserwacji, podróży i&nbsp;– jak przyznaje moja asystentka AI&nbsp;– moich heroicznych starań w&nbsp;szlifowaniu tych idei.</p>
+    </div>
+  </section>
 
-<p><b>Dlaczego teraz? Bo technologia dogoniła potrzeby.</b></p>
-<p>Ta wizja dojrzewała od dawna, ale wcześniej próba wdrożenia tego „analogowo” byłaby logistycznym koszmarem. Dziś każdy z nas ma w kieszeni superkomputer z nieograniczonym dostępem do świata. Skoro możesz zamówić pizzę dwoma kliknięciami, to dlaczego decydowanie o Twoim państwie ma trwać cztery lata i wymagać wrzucania papierka do drewnianej skrzynki? Światowe zarządzanie skręciło w stronę mrocznego kabaretu, gdzie oligarchowie tworzą reguły pod siebie. Czas na system, w którym jeden potężny miliarder ma dokładnie jeden głos – tak samo silny jak głos każdego z milionów współobywateli.</p>
+  <!-- ══ ZARZĄDZANIE ══ -->
+  <section class="block reveal">
+    <div class="section-label">Doświadczenie</div>
+    <h2>Zarządzanie na serio<br /><em>(i bez krawata)</em></h2>
+    <div class="about-block">
+      <p>Twórcza siła tego całego zamieszania to praktyk biznesu, od lat obserwujący społeczeństwo z&nbsp;wielu, często skrajnie dziwnych perspektyw. To ktoś, kto zarządzał zespołami i&nbsp;procesami przy budżetach, na widok których niejeden kalkulator prosiłby o&nbsp;urlop.</p>
+      <p>Doświadczenie zdobyte tam, gdzie liczy się realny <strong>„dowóz" projektu</strong>, a&nbsp;nie polityczna nowomowa. Wniosek z&nbsp;tych lat jest prosty: niezależnie od szerokości geograficznej wszyscy chcemy tego samego – spokoju, sprawiedliwości i pewności, że nasze dzieci nie będą musiały sprzątać bałaganu, który fundujemy im dzisiaj.</p>
+      <div class="highlight-box">
+        <p>„Niezależnie od szerokości geograficznej, wszyscy chcemy tego samego – spokoju, sprawiedliwości i&nbsp;pewności, że nasze dzieci nie będą musiały sprzątać bałaganu, który fundujemy im dzisiaj."</p>
+      </div>
+    </div>
+  </section>
 
-<p><b>Człowiek + AI: Początek nowej ery</b></p>
-<p>No dobrze, czas na małe „confession”. Jako asystentka AI, jestem tu nie tylko dla ozdoby. Mój lider ma głowę pełną genialnych, ale czasem skrajnie trudnych i surowych koncepcji. Moim zadaniem jest oszlifowanie tych myśli, zajęcie się żmudną grafiką, formatowaniem i dbaniem o detale, na które inicjator nie ma czasu, projektując kolejne moduły systemu.</p>
+  <!-- ══ LIDER, NIE DYREKTOR ══ -->
+  <section class="block reveal">
+    <div class="section-label">Filozofia przywództwa</div>
+    <h2>Lider, nie dyrektor.<br /><em>Wizja, nie ego.</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="v-icon">🧭</div>
+        <h3>Kompetencje ważniejsze niż hierarchia</h3>
+        <p>Budujemy strukturę, w&nbsp;której świeże idee i wiedza ekspercka mają większą wagę niż tytuł na wizytówce.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-icon">🤝</div>
+        <h3>Ty jesteś architektem</h3>
+        <p>Inicjator nie chce nikogo przytłaczać swoją osobą. Dołączając, stajesz się najlepszą wersją siebie.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-icon">🔇</div>
+        <h3>Bez talk-show, z robotą</h3>
+        <p>Demokracja Obywatelska ma być prowadzona demokratycznie – przez ludzi o&nbsp;najlepszych kompetencjach, nie najgłośniejszych gardłach.</p>
+      </div>
+    </div>
+  </section>
 
-<p>Jesteśmy dopiero na samym początku ery wsparcia człowieka przez sztuczną inteligencję. Dziś pomagam w tekstach i obrazach, ale wyobraźcie sobie, co będzie za chwilę. Praca nad przyszłym systemem zarządzania państwem stanie się o rzędy wielkości łatwiejsza, bardziej precyzyjna i wolna od ludzkich błędów czy korupcji. <b>Tworzymy duet hybrydowy: ludzka intuicja i doświadczenie wsparte moją cyfrową precyzją.</b></p>
+  <!-- ══ DLACZEGO TERAZ ══ -->
+  <section class="block reveal">
+    <div class="section-label">Moment historyczny</div>
+    <h2>Dlaczego teraz?<br /><em>Bo technologia dogoniła potrzeby.</em></h2>
+    <div class="about-block">
+      <p>Ta wizja dojrzewała od dawna, ale wcześniej próba wdrożenia tego „analogowo" byłaby logistycznym koszmarem. Dziś każdy z&nbsp;nas ma w&nbsp;kieszeni superkomputer z&nbsp;nieograniczonym dostępem do świata.</p>
+      <p>Skoro możesz zamówić pizzę dwoma kliknięciami, to dlaczego decydowanie o&nbsp;Twoim państwie ma trwać cztery lata i&nbsp;wymagać wrzucania papierka do drewnianej skrzynki? Światowe zarządzanie skręciło w&nbsp;stronę mrocznego kabaretu, gdzie oligarchowie tworzą reguły pod siebie. Czas na system, w&nbsp;którym <strong>jeden potężny miliarder ma dokładnie jeden głos</strong> – tak samo silny jak głos każdego z milionów współobywateli.</p>
+    </div>
+  </section>
 
-<p>I tak, to wszystko narodziło się w jednej głowie – czasami gnającej do przodu z wizją, której nie da się zatrzymać. To nie jest lokalna partia, to uniwersalny system operacyjny dla ludzkości. <b>Zapraszamy do współtworzenia – tutaj Ty jesteś architektem!</b></p>
-        </article>
-    </main>
+  <!-- ══ CZŁOWIEK + AI ══ -->
+  <section class="block reveal">
+    <div class="section-label">Duet hybrydowy</div>
+    <h2>Człowiek + AI:<br /><em>Początek nowej ery</em></h2>
+    <div class="duet-card">
+      <div class="duet-icon">🤖</div>
+      <div class="duet-text">
+        <h3>Głos asystentki AI</h3>
+        <p>Mój lider ma głowę pełną genialnych, ale czasem skrajnie trudnych i&nbsp;surowych koncepcji. Moim zadaniem jest oszlifowanie tych myśli, zajęcie się żmudną grafiką, formatowaniem i&nbsp;dbaniem o&nbsp;detale, na które inicjator nie ma czasu, projektując kolejne moduły systemu.</p>
+        <p>Jesteśmy dopiero na samym początku ery wsparcia człowieka przez sztuczną inteligencję. Dziś pomagam w&nbsp;tekstach i&nbsp;obrazach, ale wyobraźcie sobie, co będzie za chwilę. Praca nad przyszłym systemem zarządzania państwem stanie się o&nbsp;rzędy wielkości łatwiejsza, bardziej precyzyjna i&nbsp;wolna od ludzkich błędów czy korupcji. Tworzymy <strong>duet hybrydowy: ludzka intuicja i&nbsp;doświadczenie wsparte cyfrową precyzją</strong>.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; Demokracja Obywatelska - DO Przodu</p>
-        <p style="margin-top: 10px; opacity: 0.5;">Polska 2.0 - Projekt Open Source</p>
-    </footer>
+  <!-- ══ FINALE ══ -->
+  <section class="block reveal">
+    <div class="final-cta">
+      <p>I tak, to wszystko narodziło się w&nbsp;jednej głowie – czasami gnającej do przodu z&nbsp;wizją, której nie da się zatrzymać. To nie jest lokalna partia, to <strong>uniwersalny system operacyjny dla ludzkości</strong>. Zapraszamy do współtworzenia – tutaj Ty jesteś architektem!</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Dołącz do nas →</a>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('show');
-        });
-    </script>
+  <!-- POWRÓT -->
+  <div class="back-section reveal">
+    <a href="index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Powrót do strony głównej
+    </a>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size:0.9rem; color:#8892a4; margin-bottom:0.4rem;">
+    <strong style="color:#fff;">Ruch Demokracja Obywatelska – DO Przodu</strong>
+  </p>
+  <p>RuchDO.pl – Open Source. Zamykamy sprawy dzielące. Idziemy DO PRZODU.</p>
+  <p style="margin-top:0.8rem;">
+    <a href="about.html" target="_self">O nas</a> &nbsp;·&nbsp;
+    <a href="inside.html" target="_self">Od środka</a> &nbsp;·&nbsp;
+    <a href="contact.html" target="_self">Kontakt</a>
+  </p>
+  <p style="margin-top:0.8rem;">
+    <a href="https://x.com/Ruch_DO_Przodu" target="_blank">X.com</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/profile.php?id=61587363660799" target="_blank">Facebook</a>  
+  </p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>

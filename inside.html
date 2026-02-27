@@ -1,218 +1,303 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- 1. TYTUŁ I OPIS -->
-<title>Demokracja Obywatelska - Ruch DO Przodu</title>
-<meta name="description" content="Koniec ery obietnic, czas na erę decyzji. Ruch DO Przodu to hybrydowa demokracja bezpośrednia. System oddaje władzę obywatelom. Dołącz przed 2027.">
-<meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
-<meta name="author" content="Ruch Demokracja Obywatelska">
-<meta name="robots" content="index, follow">
-
-<!-- 2. IKONA STRONY -->
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-
-<!-- 3. OPEN GRAPH (Facebook) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ruchdo.pl/">
-<meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
-<meta property="og:description" content="Polityk jako interfejs, obywatel jako decydent. Poznaj system operacyjny dla nowoczesnej Polski.">
-<meta property="og:image" content="https://www.ruchdo.pl/share.jpg">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:site_name" content="Demokracja Obywatelska">
-
-<!-- 4. TWITTER CARDS (X) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@Ruch_DO_Przodu">
-<meta name="twitter:creator" content="@Ruch_DO_Przodu">
-<meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
-<meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
-<meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
-
-<!-- 5. CANONICAL -->
-<link rel="canonical" href="https://www.ruchdo.pl/">
-
-<!-- 6. SCHEMA.ORG -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "PoliticalParty",
-  "name": "Demokracja Obywatelska - Ruch DO Przodu",
-  "alternateName": ["Ruch DO", "DO Przodu"],
-  "url": "https://www.ruchdo.pl",
-  "logo": "https://www.ruchdo.pl/logo.png",
-  "slogan": "Koniec ery obietnic, czas na erę decyzji",
-  "foundingDate": "2024",
-  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61587363660799",
-    "https://x.com/Ruch_DO_Przodu"
-  ]
-}
-</script>
-
-<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-
-  gtag('js', new Date());
-  gtag('config', 'G-PWT3NWMNNZ');
-</script>
-
-<script>
-(function() {
-    // Sprawdzamy czy użytkownik już podjął decyzję
-    if (localStorage.getItem('cookie_consent')) {
-        var consentState = localStorage.getItem('cookie_consent');
-        if (consentState === 'granted') {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-        }
-        return; // Jeśli decyzja była, nie wyświetlamy bannera
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Od środka · Ruch DO</title>
+  <meta name="description" content="Demokracja Obywatelska – DO Przodu: od środka. Artykuły wewnętrzne organizacji." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+      line-height: 1.7;
+      font-size: 17px;
     }
 
-    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
-    window.onload = function() {
-        var style = document.createElement('style');
-        style.innerHTML = `
-            #cookie-banner {
-                position: fixed; bottom: 0; left: 0; right: 0;
-                background: #1a1a1a; color: #fff; padding: 20px;
-                display: flex; justify-content: center; align-items: center; gap: 20px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
-                font-family: Arial, sans-serif; flex-wrap: wrap;
-                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
-            }
-            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
-            .cookie-btn {
-                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
-                font-weight: bold; font-size: 14px; transition: 0.3s;
-            }
-            #btn-accept { background: #0056b3; color: white; }
-            #btn-accept:hover { background: #004494; }
-            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
-            #btn-decline:hover { border-color: #fff; color: #fff; }
-        `;
-        document.head.appendChild(style);
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+    }
+    .nav-logo { font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; color: #fff; text-decoration: none; }
+    .nav-logo span { color: #c0392b; }
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: #8892a4; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: #c0392b; }
+    .nav-back svg { width: 16px; height: 16px; }
 
-        var banner = document.createElement('div');
-        banner.id = 'cookie-banner';
-        banner.innerHTML = `
-            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
-            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
-            <div style="display:flex; gap:10px;">
-                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
-                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
-            </div>
-        `;
-        document.body.appendChild(banner);
+    /* ── HERO ── */
+    .page-hero {
+      padding: 64px 6% 52px;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(192,57,43,0.15) 0%, transparent 70%), #0a0f1e;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #e74c3c; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 900; line-height: 1.1;
+      color: #fff; letter-spacing: -1px;
+    }
+    .page-hero h1 em { font-style: normal; color: #c0392b; }
+    .page-hero p {
+      margin-top: 0.9rem; font-size: 1rem;
+      color: #8892a4; max-width: 560px; line-height: 1.7;
+    }
 
-        // Logika przycisków
-        document.getElementById('btn-accept').onclick = function() {
-            localStorage.setItem('cookie_consent', 'granted');
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-            });
-            banner.style.display = 'none';
-        };
+    /* ── WRAPPER ── */
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 5% 80px;
+    }
 
-        document.getElementById('btn-decline').onclick = function() {
-            localStorage.setItem('cookie_consent', 'denied');
-            banner.style.display = 'none';
-        };
-    };
-})();
-</script>    
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    /* ══════════════════════════════════════
+       SIATKA KART
+       Aby dodać nową kartę: skopiuj blok
+       oznaczony komentarzem KARTA i wklej
+       pod ostatnią kartą w .cards-grid
+    ══════════════════════════════════════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── POJEDYNCZA KARTA ── */
+    .inside-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .inside-card:hover {
+      border-color: #c0392b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(192,57,43,0.15);
+    }
+
+    /* Obrazek: proporcje 1024x559 = 54.59% */
+    .card-image {
+      width: 100%;
+      padding-top: 54.59%;
+      position: relative;
+      background: #0a0f1e;
+      overflow: hidden;
+    }
+    .card-image img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    /* Placeholder gdy brak obrazka */
+    .card-image-placeholder {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.6rem;
+      background: #0d1628;
+      border-bottom: 1px solid #1e293b;
+    }
+    .card-image-placeholder .ph-icon { font-size: 2.2rem; opacity: 0.4; }
+    .card-image-placeholder .ph-text {
+      font-size: 0.78rem; color: #4a5568;
+      letter-spacing: 0.5px; font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Treść karty */
+    .card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+      display: flex; flex-direction: column;
+      flex: 1;
+    }
+    .card-category {
+      font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-size: 1.15rem; font-weight: 800;
+      color: #fff; line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .card-desc {
+      font-size: 0.9rem; color: #8892a4;
+      line-height: 1.6; flex: 1;
+    }
+    .card-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 1.1rem;
+      font-size: 0.83rem; font-weight: 700;
+      color: #c0392b;
+    }
+    .card-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+    .inside-card:hover .card-link svg { transform: translateX(3px); }
+
+    /* ── POWRÓT ── */
+    .back-section {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1.5px solid #1e293b;
+      color: #c8cdd8; padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-btn:hover { border-color: #c0392b; color: #fff; }
+    .back-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080d1a; border-top: 1px solid #1e293b;
+      padding: 2.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.83rem; color: #4a5568; }
+    footer a { color: #8892a4; text-decoration: none; }
+    footer a:hover { color: #c0392b; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
-        <div class="menu-container">
-            <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Start</a>
-                <a href="contact.html">Co dalej</a>
-                <a href="articles.html">Biała Księga</a>
-                <a href="do_przodu.m4a" target="_blank">Posłuchaj</a>
-                <a href="inside.html">Od środka</a>
-                <a href="contact.html">Kontakt</a>
-            </nav>
-        </div>
-    </header>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Ruch <span>DO</span></a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Strona główna
+  </a>
+</nav>
 
-    <main class="container">
-        <h2 style="margin-bottom: 40px; border-left: 6px solid var(--do-green); padding-left: 20px; font-size: 2rem;">Demokracja Obywatelska - DO Przodu: od środka</h2>
-        
-        <div class="article-grid">
-            <!-- Inside 1 -->
-            <a href="i01.html" class="card">
-                <img src="i01.jpg" alt="Pożegnanie z politycznym przedszkolem" onerror="this.src='https://via.placeholder.com/600x400%?text=Pożegnanie+z+politycznym+przedszkolem'">
-                <div class="card-content">
-                    <h3>Pożegnanie z politycznym przedszkolem</h3>
-                    <p>Czym jest Demokracja Obywatelska i dlaczego idziemy DO Przodu</p>
-                </div>
-            </a>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-badge">Od środka</div>
+  <h1>Demokracja Obywatelska –<br /><em>DO Przodu: od środka</em></h1>
+  <p>Artykuły wewnętrzne organizacji. Jak działa Ruch DO, skąd pochodzi ta idea i dokąd zmierzamy.</p>
+</div>
 
-            <!-- Inside 2 -->
-            <a href="i02.html" class="card">
-                <img src="i02.jpg" alt="Budowniczy Nowej Polski" onerror="this.src='https://via.placeholder.com/600x400?text=Budowniczy+Nowej+Polski'">
-                <div class="card-content">
-                    <h3>Zawód: Budowniczy Nowej Polski</h3>
-                    <p>Dlaczego w DO Przodu płacimy za zmienianie świata</p>
-                </div>
-            </a>
-        </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-    </main>
+<div class="page-wrapper">
 
-    <footer>
-        <p>&copy; Demokracja Obywatelska - DO Przodu</p>
-        <p style="margin-top: 10px; opacity: 0.5;">Polska 2.0 - Projekt Open Source</p>
-    </footer>
+  <div class="cards-grid reveal">
 
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('show');
-        });
-    </script>
+    <!-- ══════════════════════════════════════════════════
+         KARTA 1
+    ══════════════════════════════════════════════════ -->
+    <a href="i01.html" class="inside-card">
+      <div class="card-image">
+        <img src="i01.jpg" />
+      </div>
+      <div class="card-body">
+        <div class="card-category">[1]</div>
+        <div class="card-title">Pożegnanie z politycznym przedszkolem</div>
+        <div class="card-desc">Czym jest Demokracja Obywatelska i dlaczego idziemy DO Przodu</div>
+        <span class="card-link">
+          Czytaj artykuł
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- ══════════════════════════════════════════════════
+         KARTA 2
+    ══════════════════════════════════════════════════ -->
+    <a href="i02.html" class="inside-card">
+      <div class="card-image">
+        <img src="i02.jpg" />
+      </div>
+      <div class="card-body">
+        <div class="card-category">[2]</div>
+        <div class="card-title">Zawód: Budowniczy Nowej Polski</div>
+        <div class="card-desc">Dlaczego w DO Przodu płacimy za zmienianie świata</div>
+        <span class="card-link">
+          Czytaj artykuł
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+  </div><!-- /cards-grid -->
+
+  <!-- POWRÓT -->
+  <div class="back-section reveal">
+    <a href="index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Powrót do strony głównej
+    </a>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size:0.9rem; color:#8892a4; margin-bottom:0.4rem;">
+    <strong style="color:#fff;">Ruch Demokracja Obywatelska – DO Przodu</strong>
+  </p>
+  <p>RuchDO.pl – Open Source. Zamykamy sprawy dzielące. Idziemy DO PRZODU.</p>
+  <p style="margin-top:0.8rem;">
+    <a href="about.html" target="_self">O nas</a> &nbsp;·&nbsp;
+    <a href="inside.html" target="_self">Od środka</a> &nbsp;·&nbsp;
+    <a href="contact.html" target="_self">Kontakt</a>
+  </p>
+  <p style="margin-top:0.8rem;">
+    <a href="https://x.com/Ruch_DO_Przodu" target="_blank">X.com</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/profile.php?id=61587363660799" target="_blank">Facebook</a>  
+  </p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>
