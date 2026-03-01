@@ -168,10 +168,16 @@
       height: 64px;
     }
     .nav-logo {
-      font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px;
-      color: #fff; text-decoration: none;
-    }
-    .nav-logo span { color: #c0392b; }
+  font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px;
+  color: #fff;
+  text-decoration: none;
+  display: flex; flex-direction: column; line-height: 1.2;
+}
+.nav-logo .logo-do { color: #c0392b; }
+.nav-logo-sub {
+  font-size: 0.7rem; color: #8892a4; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; margin-top: 2px;
+}
     .nav-back {
       display: flex; align-items: center; gap: 0.5rem;
       color: #8892a4; font-size: 0.88rem; font-weight: 600;
@@ -289,8 +295,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Ruch <span>DO</span></a>
-  <a href="index.html" class="nav-back">
+  <a href="index.html" class="nav-logo">
+  <span>Ruch <span class="logo-do">DO</span> <span style="font-weight:400;color:#fff">- nowy <span style="color:#c0392b">wymiar</span> demokracji</span></span>
+  <span class="nav-logo-sub">Demokracja Obywatelska · DO Przodu</span>
+</a>  <a href="index.html" class="nav-back">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="15 18 9 12 15 6"/>
     </svg>

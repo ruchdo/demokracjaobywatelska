@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ruch DO – banner X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1000px;
+      height: 500px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+    }
+
+    .bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 120% at 100% 50%, rgba(192,57,43,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 0% 0%, rgba(192,57,43,0.10) 0%, transparent 50%),
+        #0a0f1e;
+    }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+
+    /* Pionowa kreska – prawa krawędź */
+    .accent-line {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: #c0392b;
+    }
+
+    /* ── LAYOUT – trójstrefowy ── */
+    .banner {
+      position: relative;
+      width: 1000px; height: 370px;
+      padding: 44px 80px 44px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* GÓRNY PASEK: logo lewo, nic po prawej */
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .site-logo {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      color: #fff;
+    }
+    .site-logo span { color: #c0392b; }
+
+    /* ŚRODEK: headline wyjustowany do prawej */
+    .middle-row {
+      text-align: right;
+    }
+    h1 {
+      font-size: 3.9rem;
+      font-weight: 900;
+      line-height: 1.08;
+      color: #fff;
+      letter-spacing: -2px;
+    }
+    h1 em { font-style: normal; color: #c0392b; }
+
+    /* DOLNY PASEK: byline wyjustowany do prawej */
+    .bottom-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+    .byline {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 1rem; font-weight: 600; color: #8892a4;
+    }
+    .byline-sep { color: #2d3748; font-size: 1.1rem; }
+    .byline strong { color: #c8cdd8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="bg-grid"></div>
+  <div class="accent-line"></div>
+
+  <div class="banner">
+
+    <!-- GÓRNY PASEK – logo lewy górny róg -->
+    <div class="top-row">
+      <div class="site-logo">Ruch <span>DO</span> <span style="font-weight:400">- <span style="color:#fff">nowy</span> <span style="color:#c0392b">wymiar</span> <span style="color:#fff">demokracji</span></span></div>
+    </div>
+
+    <!-- ŚRODEK – headline wyrównany do prawej, 2 wiersze -->
+    <div class="middle-row">
+      <h1>Wzmocnijmy stronę<br /><em>demokratyczną</em>. Póki czas!</h1>
+    </div>
+
+    <!-- DÓŁ – byline wyrównany do prawej, 1 wiersz -->
+    <div class="bottom-row">
+      <div class="byline">
+        <strong>Architekt rozwiązań</strong>
+        <span class="byline-sep">|</span>
+        <span>Inicjator Demokracji Obywatelskiej</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruch DO – karta X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1200px;
+      height: 675px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+    }
+
+    .bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% -10%, rgba(192,57,43,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 90% 80%, rgba(192,57,43,0.08) 0%, transparent 60%),
+        #0a0f1e;
+    }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .accent-line {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: #c0392b;
+    }
+
+    .card {
+      position: relative;
+      width: 1200px; height: 675px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+    }
+
+    /* ── LEWA ── */
+    .left {
+      padding: 46px 44px 40px 60px;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .logo { font-size: 1rem; font-weight: 900; letter-spacing: 0.5px; color: #fff; }
+    .logo span { color: #c0392b; }
+    .logo-sub { font-size: 0.7rem; color: #8892a4; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 2px; }
+
+    .headline { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 16px 0; }
+    .badge {
+      display: inline-block;
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #e74c3c;
+      font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      padding: 0.28rem 0.75rem; border-radius: 20px;
+      margin-bottom: 14px; width: fit-content;
+    }
+    h1 {
+      font-size: 2.4rem; font-weight: 900;
+      line-height: 1.1; color: #fff;
+      letter-spacing: -1px; margin-bottom: 14px;
+    }
+    h1 em { font-style: normal; color: #c0392b; }
+    .subline { font-size: 0.93rem; color: #8892a4; line-height: 1.6; max-width: 490px; }
+
+    /* PASEK KONTRASTU – demokracja vs autorytaryzm */
+    .contrast-bar {
+      display: flex; gap: 10px;
+      margin-top: 16px;
+    }
+    .contrast-pill {
+      display: flex; align-items: center; gap: 7px;
+      padding: 7px 14px; border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .pill-bad {
+      background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.3);
+      color: #e07060;
+    }
+    .pill-good {
+      background: rgba(46,204,113,0.1);
+      border: 1px solid rgba(46,204,113,0.3);
+      color: #50d080;
+    }
+    .pill-arrow { color: #4a5568; font-size: 1rem; display: flex; align-items: center; }
+
+    /* STATS + HASHTAGI */
+    .bottom-row { }
+    .stats { display: flex; gap: 24px; margin-bottom: 12px; }
+    .stat-num { font-size: 1.45rem; font-weight: 900; color: #c0392b; line-height: 1; }
+    .stat-lbl { font-size: 0.62rem; color: #8892a4; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 3px; }
+    .hashtags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hashtags span { font-size: 0.67rem; font-weight: 700; color: #c0392b; }
+
+    /* ── PRAWA ── */
+    .right {
+      border-left: 1px solid #1e293b;
+      background: rgba(17,24,39,0.6);
+      padding: 40px 32px;
+      display: flex; flex-direction: column;
+      gap: 14px;
+    }
+    .right-label {
+      font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 2px;
+    }
+
+    .pillar {
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 12px 14px;
+      background: rgba(10,15,30,0.7);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+    }
+    .pillar-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .pillar-text h3 { font-size: 0.8rem; font-weight: 800; color: #fff; margin-bottom: 2px; line-height: 1.2; }
+    .pillar-text p  { font-size: 0.7rem; color: #8892a4; line-height: 1.4; }
+
+    .cta-url {
+      margin-top: auto;
+      padding: 11px 14px;
+      background: rgba(192,57,43,0.12);
+      border: 1px solid rgba(192,57,43,0.35);
+      border-radius: 10px; text-align: center;
+    }
+    .cta-url p { font-size: 0.67rem; color: #8892a4; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 1px; }
+    .cta-url strong { font-size: 0.98rem; font-weight: 900; color: #fff; letter-spacing: 0.3px; }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="bg-grid"></div>
+  <div class="accent-line"></div>
+
+  <div class="card">
+
+    <!-- LEWA KOLUMNA -->
+    <div class="left">
+      <div>
+        <div class="logo">Ruch <span>DO</span> <span style="font-weight:400;color:#fff">- nowy <span style="color:#c0392b">wymiar</span> demokracji</span></div>
+        <div class="logo-sub">Demokracja Obywatelska · DO Przodu</div>
+      </div>
+
+      <div class="headline">
+        <div class="badge">Polska 2027 · Czas wybrać stronę</div>
+        <h1>Świat skręca<br />w stronę <em>autorytaryzmu.</em><br />My idziemy przeciw.</h1>
+        <p class="subline">
+          Politycy tworzą reguły pod siebie, a demokracja staje się fasadą.
+          Ruch DO poprawia system, w którym to<strong style="color:#fff;"> polityk ma dokładnie jeden głos</strong> –
+          taki sam jak każdy z nas.
+        </p>
+
+        <!-- PASEK KONTRASTU -->
+        <div class="contrast-bar">
+          <div class="contrast-pill pill-good">
+            ✓ Obywatele decydują
+          </div>
+          <div class="pill-arrow">→</div>
+          <div class="contrast-pill pill-bad">
+            Politycy realizują
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">5 sek.</div>
+            <div class="stat-lbl">twój wpływ na 4 lata</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10 tyg.</div>
+            <div class="stat-lbl">zamyka 30-letni spór</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1 głos</div>
+            <div class="stat-lbl">każdy – równy</div>
+          </div>
+        </div>
+        <div class="hashtags">
+          <span>#DemokracjaObywatelska</span>
+          <span>#DO_Przodu</span>
+          <span>#Polska2027</span>
+          <span>#WolnośćCzyAutorytaryzm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRAWA KOLUMNA -->
+    <div class="right">
+      <div class="right-label">Nasza odpowiedź</div>
+
+      <div class="pillar">
+        <div class="pillar-icon">🗳️</div>
+        <div class="pillar-text">
+          <h3>Ty decydujesz – nie partia</h3>
+          <p>Aplikacja z głosowaniem na każdą kluczową ustawę. Symulacja skutków dla twojego portfela.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">🔗</div>
+        <div class="pillar-text">
+          <h3>Blockchain – koniec manipulacji</h3>
+          <p>Wynik głosowania niepodważalny matematycznie. Zero „cudów nad urną".</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">📜</div>
+        <div class="pillar-text">
+          <h3>Weksel lojalnościowy</h3>
+          <p>Poseł łamie obietnicę? Traci majątek. Twarda gwarancja – nie kolejna obietnica.</p>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">⏱️</div>
+        <div class="pillar-text">
+          <h3>System 10 tygodni</h3>
+          <p>Każdy spór ma datę ważności. Zamykamy, nie mielimy. Idziemy DO PRZODU.</p>
+        </div>
+      </div>
+
+      <div class="cta-url">
+        <br>
+        <div class="contrast-pill pill-good">✓ Bądź aktywna/y - to Twój ruch</div>
+        <br>
+        <div class="contrast-pill pill-good">✓ Propaguj - to Twój ruch</div>
+        <br>
+        <div class="contrast-pill pill-good">✓ Wspieraj - to Twój ruch</div>
+        <br>
+        <strong>ruchdo.pl</strong>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
