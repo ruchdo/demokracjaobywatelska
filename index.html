@@ -507,6 +507,23 @@
     /* ── SCROLL-REVEAL ── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
+    
+    .hero-tagline {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+    
   </style>
 </head>
 <body>
@@ -523,6 +540,13 @@
      HERO
 ══════════════════════════════════════════ -->
 <section class="hero">
+
+    <p class="hero-tagline">
+      <span style="color:#ffffff;">Nowy</span>
+      <span style="color:#e74c3c;">Wymiar</span>
+      <span style="color:#ffffff;">Demokracji</span>
+    </p>
+
   <div class="hero-badge">Ruch Demokracja Obywatelska · DO Przodu</div>
   <h1>Twój głos liczy się<br /><em>5 sekund</em> raz na 4 lata.</h1>
   <p class="hero-sub">
