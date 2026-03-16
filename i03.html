@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<!-- 1. TYTUŁ I OPIS -->
+<title>Projekt Regulacji Mediów w Polsce – Założenia (PRMRP) · Ruch DO Przodu</title>
+<meta name="description" content="Jak przebić bańki informacyjne w Polsce? Projekt Regulacji Mediów – założenia ustawy o pluralizmie medialnym, niezależnym nadzorze i przejrzystości algorytmów.">
+<meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
+<meta name="author" content="Ruch Demokracja Obywatelska">
+<meta name="robots" content="index, follow">
+
+<!-- 2. IKONA STRONY -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- 3. OPEN GRAPH (Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ruchdo.pl/">
+<meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
+<meta property="og:description" content="Polityk jako interfejs, obywatel jako decydent. Poznaj system operacyjny dla nowoczesnej Polski.">
+<meta property="og:image" content="https://www.ruchdo.pl/share.jpg">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Demokracja Obywatelska">
+
+<!-- 4. TWITTER CARDS (X) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Ruch_DO_Przodu">
+<meta name="twitter:creator" content="@Ruch_DO_Przodu">
+<meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
+<meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
+<meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
+
+<!-- 5. CANONICAL -->
+<link rel="canonical" href="https://www.ruchdo.pl/">
+
+<!-- 6. SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PoliticalParty",
+  "name": "Demokracja Obywatelska - Ruch DO Przodu",
+  "alternateName": ["Ruch DO", "DO Przodu"],
+  "url": "https://www.ruchdo.pl",
+  "logo": "https://www.ruchdo.pl/logo.png",
+  "slogan": "Koniec ery obietnic, czas na erę decyzji",
+  "foundingDate": "2024",
+  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61587363660799",
+    "https://x.com/Ruch_DO_Przodu"
+  ]
+}
+</script>
+
+<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-PWT3NWMNNZ');
+</script>
+
+<script>
+(function() {
+    // Sprawdzamy czy użytkownik już podjął decyzję
+    if (localStorage.getItem('cookie_consent')) {
+        var consentState = localStorage.getItem('cookie_consent');
+        if (consentState === 'granted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
+        return; // Jeśli decyzja była, nie wyświetlamy bannera
+    }
+
+    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
+    window.onload = function() {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            #cookie-banner {
+                position: fixed; bottom: 0; left: 0; right: 0;
+                background: #1a1a1a; color: #fff; padding: 20px;
+                display: flex; justify-content: center; align-items: center; gap: 20px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
+                font-family: Arial, sans-serif; flex-wrap: wrap;
+                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
+            }
+            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
+            .cookie-btn {
+                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
+                font-weight: bold; font-size: 14px; transition: 0.3s;
+            }
+            #btn-accept { background: #0056b3; color: white; }
+            #btn-accept:hover { background: #004494; }
+            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
+            #btn-decline:hover { border-color: #fff; color: #fff; }
+        `;
+        document.head.appendChild(style);
+
+        var banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.innerHTML = `
+            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
+            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
+            <div style="display:flex; gap:10px;">
+                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
+                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        // Logika przycisków
+        document.getElementById('btn-accept').onclick = function() {
+            localStorage.setItem('cookie_consent', 'granted');
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            banner.style.display = 'none';
+        };
+
+        document.getElementById('btn-decline').onclick = function() {
+            localStorage.setItem('cookie_consent', 'denied');
+            banner.style.display = 'none';
+        };
+    };
+})();
+</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+    }
+.nav-logo {
+  font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px;
+  color: #fff;
+  text-decoration: none;
+  display: flex; flex-direction: column; line-height: 1.2;
+}
+.nav-logo .logo-do { color: #c0392b; }
+.nav-logo-sub {
+  font-size: 0.7rem; color: #8892a4; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; margin-top: 2px;
+}
+
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: #8892a4; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: #c0392b; }
+    .nav-back svg { width: 16px; height: 16px; }
+
+    .article-hero {
+      width: 100%;
+      line-height: 0;
+    }
+    .article-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 5% 80px;
+    }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding-top: 2rem; flex-wrap: wrap;
+    }
+    .article-num-badge {
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #c0392b;
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 20px;
+    }
+    .article-series { font-size: 0.78rem; color: #8892a4; letter-spacing: 0.5px; }
+
+    .article-title {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 900; line-height: 1.15;
+      color: #fff; letter-spacing: -0.8px;
+      margin-top: 1rem;
+    }
+    .article-title em { font-style: normal; color: #c0392b; }
+
+    .article-divider {
+      width: 48px; height: 3px;
+      background: #c0392b; border-radius: 2px;
+      margin: 1.6rem 0;
+    }
+
+    .article-body { color: #c8cdd8; font-size: 1.05rem; line-height: 1.85; }
+    .article-body h2 {
+      font-size: clamp(1.3rem, 3vw, 1.75rem); font-weight: 800;
+      color: #fff; letter-spacing: -0.4px;
+      margin-top: 2.8rem; margin-bottom: 0.8rem;
+    }
+    .article-body h3 {
+      font-size: 1.1rem; font-weight: 700; color: #e0e4ed;
+      margin-top: 2rem; margin-bottom: 0.5rem;
+    }
+    .article-body p { margin-bottom: 1.3rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+    .article-body li { margin-bottom: 0.5rem; color: #c8cdd8; }
+    .article-body strong { color: #fff; font-weight: 700; }
+    .article-body em { color: #c0392b; font-style: normal; }
+    .article-body blockquote {
+      border-left: 3px solid #c0392b;
+      padding: 0.8rem 1.4rem; margin: 1.8rem 0;
+      background: rgba(192,57,43,0.06);
+      border-radius: 0 8px 8px 0;
+      color: #e0e4ed; font-size: 1.05rem;
+    }
+    .article-body a { color: #c0392b; text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: #e74c3c; }
+
+    .back-section {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1.5px solid #1e293b;
+      color: #c8cdd8; padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-btn:hover { border-color: #c0392b; color: #fff; }
+    .back-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .back-share { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .share-label { font-size: 0.82rem; color: #8892a4; }
+    .share-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .share-icon:hover { opacity: 0.8; }
+    .share-fb { background: #1877F2; color: #fff; }
+    .share-x  { background: #000; color: #fff; border: 1px solid #333; }
+
+    footer {
+      background: #080d1a; border-top: 1px solid #1e293b;
+      padding: 2.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.83rem; color: #4a5568; }
+    footer a { color: #8892a4; text-decoration: none; }
+    footer a:hover { color: #c0392b; }
+  
+    /* ── SHARE WIDGET ── */
+    .share-widget-wrapper { position: relative; display: flex; flex-direction: column; align-items: flex-end; }
+    .nav-share-wrapper { position: relative; }
+    .nav-share-wrapper .share-menu {
+      position: absolute; top: calc(100% + 10px); right: 0; z-index: 200;
+    }
+    .nav-share-trigger {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(192,57,43,0.15); border: 1.5px solid rgba(192,57,43,0.5); color: #c0392b;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-share-trigger:hover { background: rgba(192,57,43,0.28); transform: scale(1.07); }
+    .share-trigger {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(192,57,43,0.12); border: 1.5px solid rgba(192,57,43,0.45);
+      color: #c0392b; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s; margin-bottom: 0.6rem;
+    }
+    .share-trigger:hover { background: rgba(192,57,43,0.25); transform: scale(1.06); }
+    .share-menu {
+      background: #111827; border: 1px solid #1e293b; border-radius: 14px;
+      padding: 1.2rem 1rem; min-width: 265px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45); display: none;
+    }
+    .share-menu.open { display: block; }
+    .share-menu-title { font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 0.7rem; padding-bottom: 0.65rem; border-bottom: 1px solid #1e293b; }
+    .share-option {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.65rem 0.5rem; border-radius: 8px;
+      text-decoration: none; color: #c8cdd8; font-size: 0.92rem; font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer; border: none; background: transparent;
+      width: 100%; text-align: left;
+      border-bottom: 1px solid rgba(30,41,59,0.7);
+    }
+    .share-option:last-child { border-bottom: none; }
+    .share-option:hover { background: rgba(192,57,43,0.09); color: #fff; }
+    .share-option-icon {
+      width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .inline-share-list {
+      display: flex; flex-direction: column;
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 14px; overflow: hidden;
+    }
+    .inline-share-option {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      text-decoration: none; color: #c8cdd8; font-size: 0.95rem; font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer; border: none; background: transparent;
+      width: 100%; text-align: left;
+      border-bottom: 1px solid #1e293b;
+    }
+    .inline-share-option:last-child { border-bottom: none; }
+    .inline-share-option:hover { background: rgba(192,57,43,0.09); color: #fff; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+  <span>Ruch <span class="logo-do">DO</span> <span style="font-weight:400;color:#fff">- nowy <span style="color:#c0392b">wymiar</span> demokracji</span></span>
+  <span class="nav-logo-sub">Demokracja Obywatelska · DO Przodu</span>
+</a>
+  <!-- NAV SHARE WIDGET -->
+  <div class="share-widget-wrapper nav-share-wrapper">
+    <button class="share-trigger nav-share-trigger" onclick="toggleShareMenu()" aria-label="Udostępnij">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+    </button>
+    <div class="share-menu" id="shareMenu">
+      <div class="share-menu-title">Udostępnij</div>
+      <button class="share-option" onclick="copyShareLink(this)">
+        <span class="share-option-icon" style="background:#1e293b; border:1px solid #2d3f55;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8892a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="share-opt-label">Kopiuj link strony</span>
+      </button>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ruchdo.pl/i03.html" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#0A66C2;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </span>
+        Udostępnij na LinkedIn
+      </a>
+      <a href="https://x.com/intent/tweet?url=https://ruchdo.pl/i03.html&text=Tw%C3%B3j+g%C5%82os+liczy+si%C4%99+5+sekund+raz+na+4+lata.+Czas+to+zmieni%C4%87.+%23DOPrzodu+%23DemokracjaObywatelska" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#000; border:1px solid #333;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </span>
+        Udostępnij na X.com
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchdo.pl/i03.html" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#1877F2;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </span>
+        Udostępnij na Facebooku
+      </a>
+      <a href="mailto:?subject=Ruch%20DO%20Przodu%20%E2%80%93%20Demokracja%20Obywatelska&body=Sprawd%C5%BA%3A%20https%3A%2F%2Fruchdo.pl%2Fi03.html" class="share-option">
+        <span class="share-option-icon" style="background:#1e293b; border:1px solid rgba(192,57,43,0.4);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </span>
+        Udostępnij przez e-mail
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Obrazek: aXX.jpg (1024x559 px), np. a01.jpg, a02.jpg ... -->
+<div class="article-hero">
+  <img src="i03.jpg" width="1024" height="559" />
+</div>
+
+<div class="article-wrapper">
+
+  <div class="article-meta">
+    <span class="article-num-badge">2</span>
+    <span class="article-series">DO Przodu · Demokracja Obywatelska – Projekt Regulacji Mediów</span>
+  </div>
+
+  <h1 class="article-title">Projekt Regulacji Mediów w Polsce — Założenia <em>(PRMRP)</em></h1>
+
+  <div class="article-divider"></div>
+
+  <div class="article-body">
+
+<p>Regulacja ma jeden cel: <strong>przebić bańki informacyjne</strong> i zagwarantować każdemu obywatelowi — bez względu na to, jakie medium ogląda — dostęp do pełnego, rzetelnego obrazu życia publicznego. Nie chodzi o cenzurę. Chodzi o to, żeby media z koncesją — korzystające ze wspólnego dobra, jakim jest częstotliwość lub platforma — wywiązywały się z obowiązku służby publicznej. <em>Fakty wspólne, oceny wolne</em> — to fundament demokracji.</p>
+
+<h2>Zakres podmiotowy — kogo obejmuje regulacja</h2>
+
+<p>Regulacja obejmuje <strong>wszystkich</strong>, którzy kierują przekaz do polskich odbiorców w języku polskim i działają na terenie Polski — bez względu na kraj rejestracji:</p>
+
+<ul>
+  <li>Nadawców telewizyjnych i radiowych z koncesją KRRiT (publicznych i prywatnych)</li>
+  <li>Platformy streamingowe i VOD działające w Polsce (Netflix, YouTube, Player, TVP VOD itp.) — jeśli produkują lub dystrybuują polskojęzyczne treści informacyjne i publicystyczne</li>
+  <li>Portale informacyjne i agregatory newsów o zasięgu powyżej progu (np. 1 mln unikalnych użytkowników miesięcznie)</li>
+  <li>Platformy mediów społecznościowych działające na terenie Polski — w zakresie algorytmów rekomendacji treści politycznych i informacyjnych</li>
+  <li><strong>Podmioty zagraniczne nadające po polsku i kierujące przekaz do odbiorców w Polsce</strong> — jeśli osiągają próg zasięgu lub korzystają z polskiej infrastruktury dystrybucji</li>
+</ul>
+
+<p>Wyłączone są: media o zasięgu lokalnym poniżej progu, media wyraźnie satyryczne lub rozrywkowe, media branżowe nieobejmujące treści politycznych.</p>
+
+<h2>Definicje kluczowe</h2>
+
+<ul>
+  <li><strong>Strona rządząca</strong> = partie i koalicje tworzące aktualny rząd (premier + ministrowie), potwierdzone uchwałą Sejmu o powołaniu rządu</li>
+  <li><strong>Strona opozycyjna</strong> = wszystkie ugrupowania parlamentarne niebędące częścią koalicji rządzącej; jeśli opozycja jest podzielona, każde ugrupowanie otrzymuje proporcjonalny ułamek z puli 50% czasu — proporcjonalnie do liczby posiadanych mandatów w Sejmie</li>
+  <li><strong>Blok informacyjny</strong> = wyraźnie zadeklarowany przez nadawcę program informacyjny o czasie trwania minimum 20 i maksimum 30 minut, emitowany co najmniej 3 razy dziennie; tylko te bloki podlegają rygorowi proporcjonalności</li>
+  <li><strong>Program publicystyczny</strong> = audycja z udziałem polityków, ekspertów lub przedstawicieli stron politycznych, której celem jest komentarz, analiza lub debata dotycząca spraw publicznych</li>
+  <li><strong>Manipulacja informacją</strong> = wyrywanie wypowiedzi z kontekstu, montaż zmieniający sens, pomijanie sprostowań, stosowanie tytułów sprzecznych z treścią materiału</li>
+  <li><strong>Algorytm rekomendacji treści politycznych</strong> = każdy automatyczny mechanizm decydujący o kolejności, widoczności lub dostępności treści z kategorii: polityka, gospodarka, sprawy społeczne</li>
+</ul>
+
+<h2>Filar I — Czas antenowy i proporcjonalność</h2>
+
+<h3>Bloki informacyjne</h3>
+
+<ul>
+  <li>Każdy nadawca emituje <strong>minimum 3 bloki informacyjne dziennie</strong>: ok. godz. 12:00, ok. 19:00–20:00 (prime time), ok. 22:00–23:00</li>
+  <li>Każdy blok trwa <strong>minimum 20 i maksimum 30 minut</strong> — nadawca deklaruje go z góry w ramówce i nie może go skracać ani przesuwać poza dopuszczalne okno</li>
+  <li>Czas poświęcony stronie rządzącej i stronie opozycyjnej wynosi <strong>po 50% łącznego czasu</strong> każdego bloku</li>
+  <li>Proporcja liczona jest <strong>tygodniowo</strong> — elastyczność przy wydarzeniach bieżących, ale bilans musi być wyrównany do końca tygodnia</li>
+  <li>Każdy nadawca publikuje cotygodniowy raport z pomiarem czasu antenowego — dostępny publicznie online</li>
+</ul>
+
+<h3>Programy publicystyczne</h3>
+
+<ul>
+  <li>Minimum <strong>2 programy publicystyczne tygodniowo</strong> — dolna granica; górnej nie ma, nadawca może ich emitować dowolnie więcej</li>
+  <li><strong>Zasada proporcjonalności obowiązuje każdy program z osobna</strong>: 50% strona rządząca, 50% strona opozycyjna</li>
+  <li>Przy podzielonej opozycji — rozliczenie proporcjonalne do mandatów, liczone łącznie w skali tygodnia, nie w każdym odcinku osobno</li>
+  <li><strong>Zakaz "ustawek"</strong>: jeśli zaproszony odmówi, nadawca dokumentuje zaproszenie i zastępuje innym przedstawicielem tej samej strony — nie może zaprosić wyłącznie jednej strony</li>
+  <li>Moderatorzy nie mogą promować ani dyskredytować żadnej ze stron — standard neutralności moderatora doprecyzowany w rozporządzeniu wykonawczym</li>
+</ul>
+
+<h3>Kampania wyborcza i cisza wyborcza</h3>
+
+<ul>
+  <li>Regulacja <strong>nie przewiduje specjalnego trybu wyborczego</strong> — zasady proporcjonalności obowiązują przez cały rok</li>
+  <li>Cisza wyborcza w mediach zostaje <strong>zniesiona</strong> — obywatel ma prawo do informacji aż do zamknięcia lokali wyborczych</li>
+  <li>Jedyny wyjątek: zakaz emisji nowych płatnych reklam politycznych w dniu głosowania</li>
+</ul>
+
+<h2>Filar II — Zasady jakości informacji</h2>
+
+<h3>Zakazy</h3>
+
+<ol>
+  <li><strong>Wyrywanie wypowiedzi z kontekstu</strong> — cytat musi zawierać niezbędny kontekst; montaż skracający wypowiedź nie może zmieniać jej sensu</li>
+  <li><strong>Tytuły sprzeczne z treścią</strong> — nagłówek lub zapowiedź musi odzwierciedlać rzeczywistą zawartość materiału</li>
+  <li><strong>Pomijanie sprostowań</strong> — nadawca ma obowiązek emitować sprostowanie w tym samym paśmie, w którym emitował materiał pierwotny</li>
+  <li><strong>Nieuprawnione etykietowanie</strong> — stosowanie określeń wartościujących wobec stron politycznych bez oparcia w prawomocnym orzeczeniu sądowym</li>
+  <li><strong>Dezinformacja przez zaniechanie</strong> — celowe pomijanie informacji, które zmieniają ocenę prezentowanego faktu</li>
+</ol>
+
+<h3>Nakazy</h3>
+
+<ol>
+  <li><strong>Obowiązek podania źródła</strong> każdego cytatu, statystyki lub ekspertyzy użytej w materiale informacyjnym</li>
+  <li><strong>Obowiązek aktualizacji</strong> — jeśli fakty uległy zmianie, nadawca emituje aktualizację w ciągu 24 godzin</li>
+  <li><strong>Oznaczanie materiałów sponsorowanych</strong> — treści opłacone przez podmiot polityczny oznaczone jako "materiał sponsorowany" przez minimum 80% czasu emisji</li>
+</ol>
+
+<h2>Filar III — Algorytmy i platformy internetowe</h2>
+
+<h3>Przejrzystość algorytmów</h3>
+
+<ul>
+  <li>Każda platforma publikuje <strong>audyt algorytmu</strong> rekomendacji treści politycznych minimum raz na 6 miesięcy</li>
+  <li>Audyt przeprowadza <strong>niezależny podmiot certyfikowany</strong> przez organ nadzorczy — nie sam dostawca platformy</li>
+  <li>Audyt sprawdza: czy algorytm faworyzuje treści jednej strony politycznej, czy wzmacnia treści wywołujące emocje negatywne, jak reaguje na skargę użytkownika</li>
+</ul>
+
+<h3>Zakaz faworyzowania</h3>
+
+<ul>
+  <li>Algorytm nie może <strong>dyskryminować ani promować</strong> treści ze względu na przynależność polityczną twórcy</li>
+  <li>Platforma nie może obniżać zasięgów organicznych bez podania transparentnego, technicznego uzasadnienia</li>
+  <li>Użytkownik ma prawo do <strong>trybu chronologicznego</strong> — przeglądania treści bez rekomendacji algorytmicznych — dostępnego jednym kliknięciem</li>
+</ul>
+
+<h3>Równy dostęp do reklamy politycznej</h3>
+
+<ul>
+  <li>Stawki za reklamę polityczną muszą być <strong>jawne i jednolite</strong> — platforma nie może różnicować cen za dotarcie do tych samych grup odbiorców w zależności od opcji politycznej zlecającego</li>
+</ul>
+
+<h2>Filar IV — Niezależny Organ Nadzoru Medialnego (NONM)</h2>
+
+<h3>Skład i wybór — żadnego wpływu polityków</h3>
+
+<ul>
+  <li>Organ składa się z <strong>15 członków</strong> powoływanych na 5 lat, bez możliwości ponownego zasiadania</li>
+  <li>Kandydaci zgłaszani przez: środowiska dziennikarskie, prawnicze, kultury i sztuki, uczelnie medioznawcze, organizacje pozarządowe zajmujące się wolnością mediów</li>
+  <li>Spośród zakwalifikowanych kandydatów (weryfikacja: wykształcenie, niekaralność, brak przynależności partyjnej przez ostatnie 10 lat) — <strong>losowanie publiczne</strong> wyłania 15 członków</li>
+  <li><strong>Żaden polityk, urzędnik wyższego szczebla ani osoba powiązana z nadawcą</strong> nie może być kandydatem</li>
+</ul>
+
+<h3>Finansowanie mediów publicznych</h3>
+
+<ul>
+  <li>Media publiczne mogą być finansowane <strong>z budżetu państwa</strong> — ale mechanizm przekazywania środków musi być automatyczny i ustawowy: określona kwota na obywatela lub procent PKB</li>
+  <li>Żaden organ władzy wykonawczej ani ustawodawczej nie ma prawa wstrzymać, obciąć ani warunkowo przyznać finansowania mediom publicznym</li>
+  <li>Nadzór nad wydatkowaniem środków sprawuje <strong>NONM i Najwyższa Izba Kontroli</strong> — nie ministerstwo ani komisja sejmowa</li>
+</ul>
+
+<h3>Kompetencje NONM</h3>
+
+<ul>
+  <li>Przyjmowanie i rozpatrywanie skarg obywatelskich i podmiotów medialnych</li>
+  <li>Prowadzenie postępowań z urzędu</li>
+  <li>Nakładanie sankcji i certyfikowanie audytorów algorytmów</li>
+  <li>Publikacja corocznego raportu o stanie pluralizmu mediów w Polsce</li>
+  <li>Możliwość zwrócenia się do sądu administracyjnego o zawieszenie koncesji w trybie pilnym</li>
+</ul>
+
+<h2>Filar V — Sankcje</h2>
+
+<h3>Skala sankcji (stopniowana)</h3>
+
+<ul>
+  <li><strong>Pierwsze naruszenie proporcji czasu</strong> → upomnienie publiczne + nakaz emisji materiału wyrównującego</li>
+  <li><strong>Powtarzające się naruszenia proporcji</strong> → kara finansowa: 0,5–2% rocznych przychodów nadawcy</li>
+  <li><strong>Manipulacja informacją (udowodniona)</strong> → kara finansowa: 2–5% rocznych przychodów + obowiązek emisji sprostowania w prime time</li>
+  <li><strong>Rażące, systemowe naruszenia</strong> → zawieszenie koncesji na 3–12 miesięcy</li>
+  <li><strong>Brak poprawy po zawieszeniu</strong> → <em>cofnięcie koncesji</em></li>
+  <li><strong>Platforma ukrywa algorytm lub odmawia audytu</strong> → kara do 6% globalnych przychodów + blokada emisji reklam politycznych</li>
+</ul>
+
+<h3>Procedura</h3>
+
+<ul>
+  <li>Każde postępowanie jest <strong>jawne</strong> — materiały dowodowe dostępne publicznie po zakończeniu postępowania</li>
+  <li>Odwołanie do <strong>Naczelnego Sądu Administracyjnego</strong> — nie do żadnego organu politycznego</li>
+  <li>Termin rozpatrzenia skargi: <strong>60 dni</strong> od złożenia (tryb pilny: 14 dni)</li>
+</ul>
+
+<blockquote>Zadaniem tej regulacji jest jedno: żeby Kowalski z Rzeszowa oglądający telewizję A i Nowak z Gdańska oglądający telewizję B — żyli w tej samej rzeczywistości faktycznej, nawet jeśli wyciągają z niej różne wnioski. <strong>Fakty wspólne, oceny wolne</strong> — bez tego żadne głosowanie obywatelskie nie ma sensu.</blockquote>
+
+</div>
+
+<div class="back-section">
+    <a href="inside.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Powrót
+    </a>
+    <div class="back-share">
+      <span class="share-label">Udostępnij:</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchdo.pl/i03.html/i03.html"
+         target="_blank" rel="noopener" class="share-icon share-fb" title="Udostępnij na Facebooku">f</a>
+      <a href="https://x.com/intent/tweet?url=https://ruchdo.pl/i03.html&text=Zawód:+Budowniczy+Nowej+Polski.+Dlaczego+w+DO+Przodu+płacimy+za+zmienianie świata?+%23DO_Przodu+%23DemokracjaObywatelska"
+         target="_blank" rel="noopener" class="share-icon share-x" title="Udostępnij na X">𝕏</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p style="font-size:0.9rem; color:#8892a4; margin-bottom:0.4rem;">
+    <strong style="color:#fff;">Ruch Demokracja Obywatelska – DO Przodu</strong>
+  </p>
+  <p>RuchDO.pl – Open Source. Zamykamy sprawy dzielące. Idziemy DO PRZODU.</p>
+  <p style="margin-top:0.8rem;">
+    <a href="about.html" target="_self">O nas</a> &nbsp;·&nbsp;
+    <a href="inside.html" target="_self">Od środka</a> &nbsp;·&nbsp;
+    <a href="contact.html" target="_self">Kontakt</a>
+  </p>
+  <p style="margin-top:0.8rem;">
+    <a href="https://x.com/Ruch_DO_Przodu" target="_blank">X.com</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/profile.php?id=61587363660799" target="_blank">Facebook</a>  
+  </p>
+</footer>
+
+
+<script>
+  // ── SHARE WIDGET ──
+  function toggleShareMenu() {
+    document.getElementById('shareMenu').classList.toggle('open');
+  }
+  function copyShareLink(btn) {
+    navigator.clipboard.writeText('https://ruchdo.pl/i03.html').then(function() {
+      var lbl = btn.querySelector('.share-opt-label');
+      lbl.textContent = 'Skopiowano! ✓';
+      setTimeout(function() { lbl.textContent = 'Kopiuj link strony'; }, 2000);
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var wrapper = document.querySelector('.share-widget-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+      var menu = document.getElementById('shareMenu');
+      if (menu) menu.classList.remove('open');
+    }
+  });
+
+</script>
+</body>
+</html>
