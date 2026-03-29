@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<!-- 1. TYTUŁ I OPIS -->
+<title>Projekt Regulacji Mediów w Polsce – Założenia (PRMRP) · Ruch DO Przodu</title>
+<meta name="description" content="Jak przebić bańki informacyjne w Polsce? Projekt Regulacji Mediów – założenia ustawy o pluralizmie medialnym, niezależnym nadzorze i przejrzystości algorytmów.">
+<meta name="keywords" content="Demokracja Obywatelska, Ruch DO Przodu, Demokracja Bezpośrednia, Polska 2027, Kandydat Interfejs, Głosowanie Blockchain">
+<meta name="author" content="Ruch Demokracja Obywatelska">
+<meta name="robots" content="index, follow">
+
+<!-- 2. IKONA STRONY -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- 3. OPEN GRAPH (Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ruchdo.pl/">
+<meta property="og:title" content="Ruch DO Przodu - Odzyskaj Państwo">
+<meta property="og:description" content="Polityk jako interfejs, obywatel jako decydent. Poznaj system operacyjny dla nowoczesnej Polski.">
+<meta property="og:image" content="https://www.ruchdo.pl/share.jpg">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Demokracja Obywatelska">
+
+<!-- 4. TWITTER CARDS (X) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Ruch_DO_Przodu">
+<meta name="twitter:creator" content="@Ruch_DO_Przodu">
+<meta name="twitter:title" content="Ruch DO Przodu | Koniec ery obietnic">
+<meta name="twitter:description" content="Przechodzimy z relacji Rodzic-Dziecko na Dorosły-Dorosły. Sprawdź, jak działa hybrydowa demokracja.">
+<meta name="twitter:image" content="https://www.ruchdo.pl/share.jpg">
+
+<!-- 5. CANONICAL -->
+<link rel="canonical" href="https://www.ruchdo.pl/">
+
+<!-- 6. SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PoliticalParty",
+  "name": "Demokracja Obywatelska - Ruch DO Przodu",
+  "alternateName": ["Ruch DO", "DO Przodu"],
+  "url": "https://www.ruchdo.pl",
+  "logo": "https://www.ruchdo.pl/logo.png",
+  "slogan": "Koniec ery obietnic, czas na erę decyzji",
+  "foundingDate": "2024",
+  "description": "Ruch społeczno-polityczny wdrażający system hybrydowej demokracji bezpośredniej w Polsce.",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61587363660799",
+    "https://x.com/Ruch_DO_Przodu"
+  ]
+}
+</script>
+
+<!-- 7. GOOGLE ANALYTICS 4 + CONSENT MODE V2 (Konfiguracja domyślna) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWT3NWMNNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Domyślnie BLOKUJEMY ciasteczka (zgodnie z RODO)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-PWT3NWMNNZ');
+</script>
+
+<script>
+(function() {
+    // Sprawdzamy czy użytkownik już podjął decyzję
+    if (localStorage.getItem('cookie_consent')) {
+        var consentState = localStorage.getItem('cookie_consent');
+        if (consentState === 'granted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
+        return; // Jeśli decyzja była, nie wyświetlamy bannera
+    }
+
+    // Jeśli nie ma decyzji, tworzymy banner dynamicznie po załadowaniu strony
+    window.onload = function() {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            #cookie-banner {
+                position: fixed; bottom: 0; left: 0; right: 0;
+                background: #1a1a1a; color: #fff; padding: 20px;
+                display: flex; justify-content: center; align-items: center; gap: 20px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 10000;
+                font-family: Arial, sans-serif; flex-wrap: wrap;
+                border-top: 3px solid #0056b3; /* Kolor przewodni Ruchu? */
+            }
+            #cookie-banner p { margin: 0; font-size: 14px; max-width: 800px; line-height: 1.5; }
+            .cookie-btn {
+                padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;
+                font-weight: bold; font-size: 14px; transition: 0.3s;
+            }
+            #btn-accept { background: #0056b3; color: white; }
+            #btn-accept:hover { background: #004494; }
+            #btn-decline { background: transparent; border: 1px solid #777; color: #ccc; }
+            #btn-decline:hover { border-color: #fff; color: #fff; }
+        `;
+        document.head.appendChild(style);
+
+        var banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.innerHTML = `
+            <p><strong>Szanujemy Twoją prywatność.</strong> Używamy plików cookies, aby analizować ruch na stronie i ulepszać system DO. 
+            Twoje dane są bezpieczne i służą tylko do celów statystycznych.</p>
+            <div style="display:flex; gap:10px;">
+                <button id="btn-decline" class="cookie-btn">Odrzuć</button>
+                <button id="btn-accept" class="cookie-btn">Akceptuję</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        // Logika przycisków
+        document.getElementById('btn-accept').onclick = function() {
+            localStorage.setItem('cookie_consent', 'granted');
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            banner.style.display = 'none';
+        };
+
+        document.getElementById('btn-decline').onclick = function() {
+            localStorage.setItem('cookie_consent', 'denied');
+            banner.style.display = 'none';
+        };
+    };
+})();
+</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e8eaf0;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+    }
+.nav-logo {
+  font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px;
+  color: #fff;
+  text-decoration: none;
+  display: flex; flex-direction: column; line-height: 1.2;
+}
+.nav-logo .logo-do { color: #c0392b; }
+.nav-logo-sub {
+  font-size: 0.7rem; color: #8892a4; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; margin-top: 2px;
+}
+
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: #8892a4; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: #c0392b; }
+    .nav-back svg { width: 16px; height: 16px; }
+
+    .article-hero {
+      width: 100%;
+      line-height: 0;
+    }
+    .article-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 5% 80px;
+    }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding-top: 2rem; flex-wrap: wrap;
+    }
+    .article-num-badge {
+      background: rgba(192,57,43,0.15);
+      border: 1px solid rgba(192,57,43,0.4);
+      color: #c0392b;
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 20px;
+    }
+    .article-series { font-size: 0.78rem; color: #8892a4; letter-spacing: 0.5px; }
+
+    .article-title {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 900; line-height: 1.15;
+      color: #fff; letter-spacing: -0.8px;
+      margin-top: 1rem;
+    }
+    .article-title em { font-style: normal; color: #c0392b; }
+
+    .article-divider {
+      width: 48px; height: 3px;
+      background: #c0392b; border-radius: 2px;
+      margin: 1.6rem 0;
+    }
+
+    .article-body { color: #c8cdd8; font-size: 1.05rem; line-height: 1.85; }
+    .article-body h2 {
+      font-size: clamp(1.3rem, 3vw, 1.75rem); font-weight: 800;
+      color: #fff; letter-spacing: -0.4px;
+      margin-top: 2.8rem; margin-bottom: 0.8rem;
+    }
+    .article-body h3 {
+      font-size: 1.1rem; font-weight: 700; color: #e0e4ed;
+      margin-top: 2rem; margin-bottom: 0.5rem;
+    }
+    .article-body p { margin-bottom: 1.3rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+    .article-body li { margin-bottom: 0.5rem; color: #c8cdd8; }
+    .article-body strong { color: #fff; font-weight: 700; }
+    .article-body em { color: #c0392b; font-style: normal; }
+    .article-body blockquote {
+      border-left: 3px solid #c0392b;
+      padding: 0.8rem 1.4rem; margin: 1.8rem 0;
+      background: rgba(192,57,43,0.06);
+      border-radius: 0 8px 8px 0;
+      color: #e0e4ed; font-size: 1.05rem;
+    }
+    .article-body a { color: #c0392b; text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: #e74c3c; }
+
+    .back-section {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1.5px solid #1e293b;
+      color: #c8cdd8; padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-btn:hover { border-color: #c0392b; color: #fff; }
+    .back-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .back-share { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .share-label { font-size: 0.82rem; color: #8892a4; }
+    .share-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .share-icon:hover { opacity: 0.8; }
+    .share-fb { background: #1877F2; color: #fff; }
+    .share-x  { background: #000; color: #fff; border: 1px solid #333; }
+
+    footer {
+      background: #080d1a; border-top: 1px solid #1e293b;
+      padding: 2.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.83rem; color: #4a5568; }
+    footer a { color: #8892a4; text-decoration: none; }
+    footer a:hover { color: #c0392b; }
+  
+    /* ── SHARE WIDGET ── */
+    .share-widget-wrapper { position: relative; display: flex; flex-direction: column; align-items: flex-end; }
+    .nav-share-wrapper { position: relative; }
+    .nav-share-wrapper .share-menu {
+      position: absolute; top: calc(100% + 10px); right: 0; z-index: 200;
+    }
+    .nav-share-trigger {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(192,57,43,0.15); border: 1.5px solid rgba(192,57,43,0.5); color: #c0392b;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-share-trigger:hover { background: rgba(192,57,43,0.28); transform: scale(1.07); }
+    .share-trigger {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(192,57,43,0.12); border: 1.5px solid rgba(192,57,43,0.45);
+      color: #c0392b; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s; margin-bottom: 0.6rem;
+    }
+    .share-trigger:hover { background: rgba(192,57,43,0.25); transform: scale(1.06); }
+    .share-menu {
+      background: #111827; border: 1px solid #1e293b; border-radius: 14px;
+      padding: 1.2rem 1rem; min-width: 265px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45); display: none;
+    }
+    .share-menu.open { display: block; }
+    .share-menu-title { font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 0.7rem; padding-bottom: 0.65rem; border-bottom: 1px solid #1e293b; }
+    .share-option {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.65rem 0.5rem; border-radius: 8px;
+      text-decoration: none; color: #c8cdd8; font-size: 0.92rem; font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer; border: none; background: transparent;
+      width: 100%; text-align: left;
+      border-bottom: 1px solid rgba(30,41,59,0.7);
+    }
+    .share-option:last-child { border-bottom: none; }
+    .share-option:hover { background: rgba(192,57,43,0.09); color: #fff; }
+    .share-option-icon {
+      width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .inline-share-list {
+      display: flex; flex-direction: column;
+      background: #111827; border: 1px solid #1e293b;
+      border-radius: 14px; overflow: hidden;
+    }
+    .inline-share-option {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      text-decoration: none; color: #c8cdd8; font-size: 0.95rem; font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer; border: none; background: transparent;
+      width: 100%; text-align: left;
+      border-bottom: 1px solid #1e293b;
+    }
+    .inline-share-option:last-child { border-bottom: none; }
+    .inline-share-option:hover { background: rgba(192,57,43,0.09); color: #fff; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+  <span>Ruch <span class="logo-do">DO</span> <span style="font-weight:400;color:#fff">- nowy <span style="color:#c0392b">wymiar</span> demokracji</span></span>
+  <span class="nav-logo-sub">Demokracja Obywatelska · DO Przodu</span>
+</a>
+  <!-- NAV SHARE WIDGET -->
+  <div class="share-widget-wrapper nav-share-wrapper">
+    <button class="share-trigger nav-share-trigger" onclick="toggleShareMenu()" aria-label="Udostępnij">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+    </button>
+    <div class="share-menu" id="shareMenu">
+      <div class="share-menu-title">Udostępnij</div>
+      <button class="share-option" onclick="copyShareLink(this)">
+        <span class="share-option-icon" style="background:#1e293b; border:1px solid #2d3f55;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8892a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="share-opt-label">Kopiuj link strony</span>
+      </button>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ruchdo.pl/i03.html" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#0A66C2;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </span>
+        Udostępnij na LinkedIn
+      </a>
+      <a href="https://x.com/intent/tweet?url=https://ruchdo.pl/i03.html&text=Tw%C3%B3j+g%C5%82os+liczy+si%C4%99+5+sekund+raz+na+4+lata.+Czas+to+zmieni%C4%87.+%23DOPrzodu+%23DemokracjaObywatelska" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#000; border:1px solid #333;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </span>
+        Udostępnij na X.com
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchdo.pl/i03.html" target="_blank" rel="noopener" class="share-option">
+        <span class="share-option-icon" style="background:#1877F2;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </span>
+        Udostępnij na Facebooku
+      </a>
+      <a href="mailto:?subject=Ruch%20DO%20Przodu%20%E2%80%93%20Demokracja%20Obywatelska&body=Sprawd%C5%BA%3A%20https%3A%2F%2Fruchdo.pl%2Fi03.html" class="share-option">
+        <span class="share-option-icon" style="background:#1e293b; border:1px solid rgba(192,57,43,0.4);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </span>
+        Udostępnij przez e-mail
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Obrazek: aXX.jpg (1024x559 px), np. a01.jpg, a02.jpg ... -->
+<div class="article-hero">
+  <img src="i04.jpg" width="1024" height="559" />
+</div>
+
+<div class="article-wrapper">
+
+  <div class="article-meta">
+    <span class="article-num-badge">4</span>
+    <span class="article-series">DO Przodu · Demokracja Obywatelska – Poradnik rozmów z wyborcami opozycji</span>
+  </div>
+
+  <h1 class="article-title">Poradnik rozmów z wyborcami opozycji</h1>
+
+  <div class="article-divider"></div>
+
+  <div class="article-body">
+
+<p>Spis treści</p>
+<ul>
+<li>Wprowadzenie</li>
+<li>Założenia i cele</li>
+<li>Do kogo mówimy (mapa elektoratu)</li>
+<li>Postawa w rozmowie</li>
+<li>Treść przekazu – jak mówić o obecnej władzy i opozycji</li>
+<li>Kanały dotarcia poza własną bańkę</li>
+<li>Minimalny osobisty plan działania</li>
+<li>Mini‑skrypty rozmów – ogólne</li>
+<li>Mini‑skrypty rozmów – Unia Europejska (UE)</li>
+<li>Mini‑skrypty rozmów – bezpieczeństwo</li>
+<li>Mini‑skrypty rozmów – praworządność</li>
+</ul>
+<h2>1. Wprowadzenie</h2>
+<p>Celem tego poradnika jest wsparcie zwolenników strony demokratycznej w prowadzeniu spokojnych, merytorycznych rozmów z wyborcami dzisiejszej opozycji. Chodzi o pokazywanie realnych efektów rządzenia, wyjaśnianie konsekwencji propozycji opozycji i budowanie zaufania – bez agresji, wyzwisk i bez atakowania.</p>
+<p>Poradnik opiera się na trzech filarach: empatii (zrozumienie motywacji rozmówcy), faktach (konkretne dane, decyzje, przykłady z życia) oraz szacunku (krytykujemy działania elit politycznych, a nie wyborców).</p>
+<h2>2. Założenia i cele</h2>
+<p>Nie chodzi o zniszczenie opozycji, ale o zmniejszenie nieufności wobec obecnej władzy i pokazanie jej faktycznych osiągnięć.</p>
+<p>Przekonujemy przede wszystkim do konkretnych rozwiązań i kierunku państwa, nie do plemiennej identyfikacji z partią.</p>
+<p>Każdą rozmowę traktujemy jako zasianie wątpliwości, a nie natychmiastowe nawrócenie.</p>
+<h2>3. Do kogo mówimy (mapa elektoratu)</h2>
+<p>W szeroko rozumianym elektoracie opozycji można wyróżnić trzy główne grupy:</p>
+<p>twardy antyrządowy elektorat – emocjonalnie nastawiony przeciwko obecnej władzy, bardzo aktywny w sieci,</p>
+<p>umiarkowanych, rozczarowanych polityką jako całością – krytycznych wobec rządu i opozycji, ale gotowych słuchać argumentów,</p>
+<p>ludzi „z rozpędu” głosujących na opozycję – poświęcających mało czasu na śledzenie polityki, opierających się na ogólnych wrażeniach.</p>
+<p>Inny język i argumenty będą skuteczne dla aktywisty z mediów społecznościowych, a inny dla sąsiadki czy osób w kolejce do lekarza.</p>
+<p>Warto świadomie dostosowywać styl rozmowy do odbiorcy i pamiętać, że naszym celem jest poszerzenie obrazu, a nie upokorzenie rozmówcy.</p>
+<h2>4. Postawa w rozmowie</h2>
+<p>Kluczowe elementy postawy:</p>
+<p>Empatia i uznanie motywacji rozmówcy – zaczynamy od „rozumiem, czemu tak głosujesz”, a nie od „wreszcie daj się przekonać”.</p>
+<p>Spokój zamiast pogardy – nie używamy wyzwisk, nie przypisujemy złej woli; gdy pojawiają się etykietki, wracamy do konkretów.</p>
+<p>Pokora zamiast triumfalizmu – przyznajemy słabości obecnej władzy, ale pokazujemy bilans i różnice względem alternatyw.</p>
+<h2>5. Treść przekazu – jak mówić o obecnej władzy i opozycji</h2>
+<p>W treści rozmów warto opierać się na trzech narzędziach: faktach, porównaniach i historiach ludzi.</p>
+<h2>5.1 Fakty i liczby w ludzkim języku</h2>
+<p>Odwołuj się do mierzalnych zmian (płace realne, inflacja, wzrost gospodarczy, inwestycje, środki z UE), ale zawsze tłumacz, co to oznacza w praktyce – ile to jest w portfelu, w rachunkach, w kolejkach do lekarza.</p>
+<h2>5.2 Porównania: jak było, jak jest</h2>
+<p>Pokazuj oś czasu: jak wyglądała dana sfera za poprzednich rządów, jak wygląda teraz i jaki jest kierunek zmian. Jeśli krytykujesz propozycje opozycji, rób to przez wskazanie konkretnych konsekwencji, a nie przez etykietowanie.</p>
+<h2>5.3 Historie konkretnych ludzi</h2>
+<p>Uzupełniaj liczby historiami: przedsiębiorcy, nauczyciela, pacjenta, rodziny. Krótkie, prawdziwe przykłady są zwykle bardziej przekonujące niż suche statystyki.</p>
+<h2>6. Kanały dotarcia poza własną bańkę</h2>
+<p>Wychodzenie poza własną bańkę wymaga obecności offline i online:</p>
+<p>Offline: rozmowy w rodzinie, pracy, sąsiedztwie, spotkania tematyczne w gminie; punktem wyjścia jest konkretny problem, nie sama polityka.</p>
+<p>Online: udział w dużych grupach tematycznych (kredyty, mieszkania, szkoły, lokalne fora), publikowanie prostych wyjaśnień i linków do rzetelnych źródeł.</p>
+<p>Język pod algorytmy: tytuły i pierwsze zdania oparte na pytaniach i konkretach, zamiast na agresywnych hasłach.</p>
+<h2>7. Minimalny osobisty plan działania</h2>
+<p>Realistyczny plan dla pojedynczej osoby może wyglądać tak:</p>
+<p>Wybrać 2–3 tematy, które dobrze znasz (np. gospodarka, UE, zdrowie), zamiast próbować znać się na wszystkim.</p>
+<p>Przygotować krótkie argumenty: kilka liczb, kilka historii, 1–2 porównania „było/jest”.</p>
+<p>Co miesiąc odbyć kilka spokojnych rozmów z osobami o innych poglądach, z celem „zobacz też ten kawałek obrazu”, bez presji natychmiastowej zmiany zdania.</p>
+<p>Obserwować, co budzi agresję, a co ciekawość – na tej podstawie modyfikować język i przykłady.</p>
+<h2>8. Mini‑skrypty rozmów – ogólne</h2>
+<h2>8.1 „Władza jest beznadziejna, wszyscy są tacy sami”</h2>
+<p>E: Szczerze? Dla mnie ta władza jest beznadziejna. Wszyscy politycy są tacy sami.
+Z: Rozumiem to zmęczenie, naprawdę dużo osób tak dziś mówi. A co konkretnie najbardziej cię wkurza w obecnym rządzie – jeden, dwa przykłady?</p>
+<p>E: No choćby to, że nic się nie zmienia w ochronie zdrowia. Kolejki jak były, tak są.
+Z: Jasne, kolejki to dramat, sam/sama to przeżywam. Ale ciekawi mnie coś: widzisz jakieś różnice między tym, jak wyglądało to za PiS, a tym, jak wygląda teraz, czy dla ciebie to jest ciągle ten sam poziom chaosu?</p>
+<p>E: Może trochę inaczej, ale generalnie syf.
+Z: OK, to spróbujmy rozbić to na kawałki. Za poprzednich rządów mieliśmy poważne problemy i zablokowane środki unijne, teraz są inne rozwiązania i odblokowane fundusze, ale wciąż brakuje porządnej reformy systemu. Nie twierdzę, że obecna władza wszystko zrobiła świetnie, ale jak patrzę na liczby i decyzje, to jednak kierunek jest inny.</p>
+<p>E: No może, ale dalej mnie to mało przekonuje.
+Z: Spoko, nie musisz się od razu przekonać. Bardziej mi chodzi o to, żebyś widział/widziała, że nie ma jednego „wszyscy są tacy sami”. Są konkretne decyzje, które coś poprawiły, i takie, które zawiodły. Ja zostaję po tej stronie, bo bilans dalej wychodzi mi na plus.</p>
+<h2>8.2 „Gospodarka i kasa – czy naprawdę jest lepiej?”</h2>
+<p>E: Oni tylko mówią, że gospodarka rośnie. Tabelki w TV, a w portfelu dalej słabo.
+Z: Rozumiem, każdy patrzy na lodówkę, nie na wykresy. Mogę ci powiedzieć, jak ja to widzę po swoim przypadku?</p>
+<p>E: No mów.
+Z: U mnie w pracy od 2023 r. pensja realnie wzrosła, a inflacja spadła. Nie mówię, że jest super, ale wcześniej miałem/miałam wrażenie, że inflacja zjada mi wszystko szybciej, niż cokolwiek rośnie. A jak u ciebie – pensja, rachunki? Czujesz jakąś różnicę między 2022–2023 a tym, co jest teraz?</p>
+<p>E: Może trochę mniej boli przy kasie, ale dalej nie jest różowo.
+Z: Jasne, nikt normalny nie powie, że jest bajka. Ale ja patrzę tak: przy tej ekipie udało się ustabilizować inflację, odblokować duże środki z UE i mamy sensowny wzrost gospodarczy. To nie jest żadna ideologia – to konkrety.</p>
+<p>E: OK, tu się możemy nie zgodzić co do oceny, ale rozumiem twoją logikę.
+Z: I to już jest coś. Nie chodzi o to, żebyś dziś zmienił/a partię, tylko żebyś miał/a pełniejszy obraz sytuacji gospodarczej, nie tylko z memów.</p>
+<h2>8.3 „UE i fundusze – propaganda czy realne pieniądze?”</h2>
+<p>E: Ten rząd robi tylko propagandę wokół Unii. Ciągle słyszę o jakichś miliardach z Brukseli, a nie widzę ich w swoim życiu.
+Z: Ciekawe, bo mamy podobne wrażenie – ja też mam alergię na triumfalizm. Ale zrobiłem/am taką prostą rzecz: spojrzałem/am, co dokładnie z tych pieniędzy ma być robione w mojej gminie – drogi, szkoły, szpitale. Sprawdzałeś/aś może, jakie projekty u was są finansowane z UE?</p>
+<p>E: Nie, szczerze mówiąc, nie.
+Z: To może warto zerknąć – zwykle stronę z projektami ma gmina albo województwo. To są realne inwestycje; jak autostrada czy linia kolejowa się buduje, to nie z memów, tylko z konkretnej kasy.</p>
+<p>E: No to faktycznie był dramat, że tyle kasy było zamrożone.
+Z: Właśnie. I dla mnie to jest ta różnica – mogę się kłócić z obecną władzą o szczegóły, ale jednak wolę ekipę, która pieniądze ściąga i wydaje, niż taką, która się obraża i blokuje.</p>
+<h2>8.4 „Rozczarowanie opozycją, ale niechęć do rządu”</h2>
+<p>E: Jestem rozczarowany/a dzisiejszą opozycją, ale do rządu też mam pretensje. Nikt mnie nie reprezentuje.
+Z: Tu się mocno zgadzam, że opozycja nie dowiozła tego, czego wielu ludzi oczekiwało. I to nie jest tylko twoje wrażenie – sondaże pokazują spadki poparcia i duże niezadowolenie z ich działań. Pytanie, co z tym robimy jako wyborcy.</p>
+<p>E: No właśnie, na kogo tu głosować?
+Z: Ja podchodzę do tego tak: nie szukam „idealnej partii”, tylko patrzę na bilans działań. Ten rząd ma swoje grzechy i niedowiezione obietnice, ale jednocześnie odblokował środki z UE, poprawił część wskaźników gospodarczych i wprowadził kilka realnych regulacji społecznych.</p>
+<p>E: OK, ale to nadal nie jest dla mnie „wow”.
+Z: Jasne, też bym wolał tryb „wow”. Ale w realnej polityce wybieram to, co mniej szkodzi i więcej robi, zamiast czekać na świętego. Na razie to ta ekipa faktycznie coś zrobiła w wymienionych obszarach, więc bardziej opłaca mi się ją wzmacniać niż liczyć na cud ze strony dzisiejszej opozycji.</p>
+<h2>9. Mini‑skrypty rozmów – Unia Europejska (UE)</h2>
+<h2>9.1 „Bruksela nam dyktuje”</h2>
+<p>E: Mam wrażenie, że Bruksela cały czas nam coś dyktuje. Już mnie ta Unia męczy.
+Z: Wiesz, sporo ludzi tak się czuje – natłok informacji i konfliktów robi swoje. A co dokładnie najbardziej cię w tym wkurza: migracja, regulacje, kasa, coś innego?</p>
+<p>E: Głównie to, że ciągle jakieś nakazy, zakazy.
+Z: OK, spróbujmy to rozłożyć. My wstąpiliśmy do UE na własne życzenie – żeby mieć swobodę wyjazdu, pracy, studiów, dostęp do rynku i funduszy. W zamian są wspólnie ustalane zasady, tak jak w spółdzielni: płacisz składkę, masz prawa, ale też zobowiązania.</p>
+<p>Z: Dla mnie kluczowe jest to, że obecny rząd nie kłóci się z UE o byle co, tylko próbuje twardo negocjować i jednocześnie trzymać kasę w Polsce, zamiast ją blokować.</p>
+<p>E: Tylko czy nie idziemy za bardzo na ustępstwa?
+Z: Pytanie, co jest dla nas ważniejsze: symboliczne „nie oddamy ani guzika”, czy realne miliardy na drogi, szkoły, transformację energetyczną, które potem widzisz w swoim mieście. Ja wolę rząd, który czasem zaciska zęby w negocjacjach, ale na końcu dowozi środki i stabilność w UE, niż taki, który buduje swoją pozycję na wiecznym konflikcie.</p>
+<h2>9.2 „Korzyści z Unii – ja ich nie widzę”</h2>
+<p>E: Wszyscy mówią o korzyściach z UE, ale ja ich nie widzę w swoim życiu.
+Z: To uczciwe odczucie. Te korzyści często są rozmyte i trudno je przypisać do jednego rachunku w portfelu. Mogę ci powiedzieć, jak ja to widzę po sobie?</p>
+<p>E: Dobra, mów.
+Z: Po pierwsze – praca i wyjazdy. Masz prawo pracować i mieszkać w całej UE bez wiz, bez starych kolejek po pozwolenia. Po drugie – inwestycje: drogi, kolej, kanalizacja, szkoły, szpitale – u mnie w okolicy większość większych projektów ma tabliczkę „finansowane z UE”. To nie są plakaty, tylko realne pieniądze.</p>
+<p>Z: Trzeci element to bezpieczeństwo gospodarcze: jak jest kryzys, to lepiej być częścią dużego bloku, niż stać samemu. Dla mnie bilans wychodzi tak, że opłaca się mieć rząd, który gra konstruktywnie w tej drużynie, zamiast straszyć wyjściem albo wiecznym konfliktem.</p>
+<h2>10. Mini‑skrypty rozmów – bezpieczeństwo</h2>
+<h2>10.1 „Rząd jest za miękki”</h2>
+<p>E: Mam wrażenie, że ta władza jest za miękka, jeśli chodzi o bezpieczeństwo. Świat jest coraz bardziej niebezpieczny.
+Z: Zgadzam się, że świat mamy ostro rozchwiany – wojna za granicą, napięcia między mocarstwami, cyberataki. Tylko pytanie, co dziś realnie wzmacnia nasze bezpieczeństwo, a co jest tylko ostrą gadką w TV.</p>
+<p>E: No to co twoim zdaniem nas realnie chroni?
+Z: Kluczowe są trzy rzeczy: silne zakotwiczenie w NATO i UE, inwestycje w wojsko i modernizację sprzętu z głową oraz stabilna pozycja dyplomatyczna. Dla mnie obecna władza spełnia te trzy warunki lepiej niż ci, którzy wcześniej jednocześnie kłócili się z Brukselą i Berlinem, a jednocześnie liczyli na parasol NATO.</p>
+<p>E: Czyli uważasz, że ten rząd jest „twardszy”, mimo że nie krzyczy tyle?
+Z: Dokładnie – wolę rząd, który w ciszy buduje realne zdolności wojskowe, współpracuje z sojusznikami i nie robi z Polski samotnej wyspy. Hasła są fajne w kampanii, ale w kryzysie liczą się sojusze i konkretne zdolności.</p>
+<h2>10.2 „Migracja i granice”</h2>
+<p>E: A co z migracją? Mam wrażenie, że obecna władza zbyt łatwo godzi się na decyzje Brukseli i osłabia nasze granice.
+Z: Bezpieczeństwo granic to jedna z najtrudniejszych rzeczy, bo łączy w sobie emocje i fakty. Dla mnie ważne są trzy pytania: czy państwo faktycznie kontroluje, kto wjeżdża; czy straż graniczna i służby mają narzędzia i wsparcie; czy robimy to w ramach wspólnej unijnej polityki, żeby nie zostać z problemem sami.</p>
+<p>E: Ale czy nie lepiej po prostu twardo zamknąć granice?
+Z: Częściowo już mamy zaostrzone kontrole i umocnione granice – tyle że to musi iść w parze z porozumieniami z UE, żebyśmy nie byli obciążeni ponad miarę. Obecny rząd stara się właśnie o to: maksymalnie wzmacniać ochronę granic, a jednocześnie wywalczyć jak najlepsze warunki w negocjacjach. Wolę takie podejście „twarde, ale w ramach wspólnej polityki”, niż samotne gesty, które ładnie wyglądają w TV, a kończą się konfliktem i brakiem realnej pomocy od partnerów.</p>
+<h2>11. Mini‑skrypty rozmów – praworządność</h2>
+<h2>11.1 „To tylko pretekst Brukseli”</h2>
+<p>E: Cała ta gadka o „praworządności” to dla mnie pretekst Brukseli, żeby się wtrącać w nasze sprawy.
+Z: Rozumiem to zmęczenie tym słowem, bo było używane jak pałka polityczna z obu stron. Jak ty rozumiesz w ogóle „praworządność”?</p>
+<p>E: No że niby niezależne sądy itd., ale każdy to sobie interpretuje jak chce.
+Z: W praktyce chodzi o parę prostych zasad: prawo ma być jasne, władza nie może robić, co chce, musi być kontrola przez niezależne sądy, a wszyscy są równi wobec prawa. Dla mnie to nie jest „widzimisię Brukseli”, tylko sposób, żeby obywatele i firmy miały pewność, że jak idą do sądu, to nie decyduje telefon z ministerstwa.</p>
+<p>E: No OK, to brzmi sensownie w teorii.
+Z: I właśnie dlatego ja wolę rząd, który próbuje te standardy przywracać i współpracować z instytucjami UE, niż taki, który mówi „nie wasza sprawa” i ryzykuje blokadę funduszy. Na końcu to my płacimy cenę za brak zaufania do naszego systemu – mniejszymi inwestycjami i gorszym wizerunkiem.</p>
+<h2>11.2 „Sądy i codzienne życie”</h2>
+<p>E: Dla mnie praworządność to abstrakcja. Co mnie obchodzi, kto tam się kłóci o sądy?
+Z: To bardzo częsta reakcja – dopóki ktoś nie ma własnej sprawy. Miałeś/aś kiedyś sytuację z urzędem, firmą, kredytem, gdzie czułeś/aś się bezsilny/a?</p>
+<p>E: No jasne, jak walczyłem/am z bankiem/firmą ubezpieczeniową.
+Z: Właśnie. Jak idziesz wtedy do sądu, chcesz mieć pewność, że sędzia jest niezależny, mianowany w przejrzysty sposób, nie pod stołem przez polityków; że prawo jest jasne i stosowane równo wobec wszystkich. To jest praworządność w praktyce, nie w podręczniku.</p>
+<p>Z: Ja trzymam stronę obecnej władzy, bo widzę, że próbuje odbudować relacje z europejskimi instytucjami i przywrócić standardy w sądach – nie po to, żeby „podobać się Brukseli”, tylko żebyśmy my mieli większe bezpieczeństwo, że w razie sporu mamy gdzie pójść po sprawiedliwość.</p>
+<p>E: W tej perspektywie faktycznie wygląda to trochę inaczej.
+Z: I o to mi chodzi – nie żebyś zmienił/a zdanie w 5 minut, tylko żebyś zobaczył/a, że za hasłem „praworządność” kryje się twoja własna sprawa z bankiem, pracodawcą czy urz</p>
+<h2>12. Instrukcja użycia poradnika</h2>
+<h2>12.1. Jak korzystać z poradnika indywidualnie</h2>
+<p>Przeczytaj całość raz „dla obrazu”</p>
+<p>Nie ucz się skryptów na pamięć od razu. Najpierw złap logikę: empatia → pytania → fakty → spokojne podsumowanie.</p>
+<p>Wybierz swoje 2–3 główne tematy</p>
+<p>Zdecyduj, co jest ci najbliższe: gospodarka, UE, bezpieczeństwo, praworządność, zdrowie.</p>
+<p>Podkreśl w poradniku te fragmenty i skrypty, które pasują do twojego stylu i doświadczeń.</p>
+<p>Dostosuj skrypty do własnego języka</p>
+<p>Zamień „u mnie w pracy” na konkretną historię ze swojego życia.</p>
+<p>Zostaw strukturę (pytanie → wysłuchanie → argument), ale słowa ułóż „po swojemu”, żeby brzmiało naturalnie, nie jak deklamacja.</p>
+<p>Poćwicz „na sucho”</p>
+<p>Przeczytaj skrypty na głos, najlepiej z drugą osobą, która zagra „E”.</p>
+<p>Zwróć uwagę, czy nie mówisz za długo jednym ciągiem; w razie czego skracaj odpowiedzi.</p>
+<p>Ustal własny, mały cel tygodniowy</p>
+<p>Np. „w tym tygodniu spróbuję dwóch spokojnych rozmów o UE i jednej o bezpieczeństwie”.</p>
+<p>Po każdej rozmowie zrób krótką notatkę: co zadziałało, co wywołało opór, jakie pojawiły się pytania.</p>
+<h2>12.2. Jak używać poradnika w małej grupie / organizacji</h2>
+<p>Zrób z tego materiał szkoleniowy</p>
+<p>Wydrukuj spis treści i kluczowe skrypty albo przygotuj prezentację z rozdziałami 4–11 jako „modułami” szkoleniowymi.</p>
+<p>Zaplanuj 60–90‑minutowe spotkanie:</p>
+<p>15 min – omówienie postawy (rozdz. 4 i 5),</p>
+<p>30 min – ćwiczenie 2–3 skryptów w parach,</p>
+<p>15–30 min – podsumowanie i zebrane wnioski.</p>
+<p>Role‑play („odgrywanie scenek”)</p>
+<p>Podziel ludzi w pary: jedna osoba gra „E” (wyborcę opozycji), druga „Z” (zwolennika władzy).</p>
+<p>Niech każdy scenariusz (np. UE, bezpieczeństwo) zostanie odegrany 2 razy z zamianą ról – pozwala to poczuć „drugą stronę”.​</p>
+<p>Po scenkach krótka rundka: co było wiarygodne, co brzmiało sztucznie, gdzie rozmowa się blokowała.</p>
+<p>Zbuduj „biblioteczkę przykładów” własnej grupy</p>
+<p>Zachęć ludzi, żeby dopisywali swoje historie, lokalne przykłady (np. konkretna inwestycja z UE, lokalny problem z sądem, zmiany w pracy).</p>
+<p>Raz na miesiąc aktualizuj „pakiet przykładów”, który wolontariusze mogą zabierać w teren lub wykorzystywać online.</p>
+<p>Pilnuj spójności tonu</p>
+<p>Uzgodnijcie na starcie: żadnych wyzwisk, zero teorii spiskowych, zero fake newsów.</p>
+<p>Jeśli ktoś ma tendencję do „politycznej naparzanki”, daj mu raczej zadania organizacyjne, a nie pierwszą linię rozmów.</p>
+<h2>12.3. Jak ciąć poradnik na treści online</h2>
+<p>Posty i wątki w social media</p>
+<p>Każdy mini‑skrypt można rozbić na:</p>
+<p>krótki cytat rozmówcy („Dla mnie ta władza jest beznadziejna. Wszyscy są tacy sami.”),</p>
+<p>odpowiedź „Z” jako treść posta,</p>
+<p>jedno pytanie do odbiorców na końcu („Jak ty widzisz różnicę między tym, co było, a tym, co jest?”).</p>
+<p>Seria „Jak odpowiadać na…”</p>
+<p>Zrób cykl: „Jak odpowiadać na:</p>
+<p>‘Bruksela nam dyktuje’,</p>
+<p>‘Korzyści z UE nie widać’,</p>
+<p>‘Rząd jest za miękki w bezpieczeństwie’,</p>
+<p>‘Praworządność to abstrakcja’.”</p>
+<p>Do każdego takiego hasła wstaw skróconą wersję skryptu (2–3 kwestie na stronę), z linkiem do pełnego poradnika / strony ruchu.</p>
+<p>Materiały do komentarzy</p>
+<p>Przygotuj „wersje ultra‑krótkie” (2–3 zdania), które można wklejać jako komentarze:</p>
+<p>1 zdanie empatii („Rozumiem, że masz takie wrażenie…”),</p>
+<p>1–2 zdania konkretu („u mnie wyglądało to tak…”, „te środki z UE to konkretne projekty X i Y…”).</p>
+<p>Traktuj komentarze nie jako miejsce na wygranie sporu, tylko na zasianie wątpliwości i zaproszenie do dłuższego tekstu.</p>
+<h2>12.4. Jak używać w rozmowach offline (rodzina, praca, sąsiedzi)</h2>
+<p>Dobierz temat do sytuacji</p>
+<p>Przy świątecznym stole lepiej sięgnąć po skrypty o gospodarce lub praworządności niż wchodzić od razu w najostrzejsze tematy kulturowe.</p>
+<p>W pracy / interesach naturalne są wątki UE, podatków, stabilności prawa, bezpieczeństwa gospodarczego.</p>
+<p>Ogranicz długość „monologu”</p>
+<p>Pilnuj, żeby twoje odpowiedzi nie były dłuższe niż 20–30 sekund jednym ciągiem. To zmusza cię do jasności i konkretu.</p>
+<p>Jeśli widzisz, że ktoś się irytuje, możesz użyć „bezpiecznej pauzy”:</p>
+<p>„Nie musimy się zgadzać, ale zależy mi, żebyś wiedział/wiedziała, jak ja to widzę na faktach. Jak chcesz, mogę ci potem podrzucić link.”</p>
+<p>Ustal własne granice</p>
+<p>Z góry ustal dla siebie moment, kiedy przerywasz rozmowę (np. gdy pojawiają się wyzwiska, wjeżdża alkohol, ktoś wchodzi w tematy osobiste).</p>
+<p>Możesz użyć prostych formuł typu:</p>
+<p>„Lubię z tobą rozmawiać, ale nie chcę się kłócić. Zostawmy ten temat na kiedy indziej.”</p>
+<h2>12.5. Jak rozwijać poradnik w czasie</h2>
+<p>Zbieraj pytania z realnych rozmów</p>
+<p>Po każdej rozmowie dopisz sobie nowe zdanie „E”, którego nie było w skryptach („ten rząd jest zbyt pro‑biznesowy”, „za mało robi dla X” itd.).</p>
+<p>Raz na jakiś czas zbuduj do tego nową odpowiedź w logice poradnika: empatia → pytanie → fakt → historia → podsumowanie.</p>
+<p>Aktualizuj fakty i przykłady</p>
+<p>Co kilka miesięcy zaktualizuj dane (inflacja, płace, bezrobocie, inwestycje z UE, decyzje dot. praworządności), żeby skrypty nie brzmiały „sprzed dwóch lat”.</p>
+<p>Testuj i porównuj skuteczność</p>
+<p>W grupie wolontariuszy / znajomych wymieniajcie się doświadczeniami: które wersje odpowiedzi „wchodzą” lepiej, co budzi najmniej agresji, co otwiera najwięcej pytań.</p>
+<p>Możecie np. raz w miesiącu robić krótkie spotkanie, na którym każdy opowie jedną historię „rozmowy, która coś zmieniła” – to buduje motywację i pozwala ulepszać skrypty.</p>
+
+</div>
+
+<div class="back-section">
+    <a href="inside.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Powrót
+    </a>
+    <div class="back-share">
+      <span class="share-label">Udostępnij:</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchdo.pl/i03.html/i03.html"
+         target="_blank" rel="noopener" class="share-icon share-fb" title="Udostępnij na Facebooku">f</a>
+      <a href="https://x.com/intent/tweet?url=https://ruchdo.pl/i03.html&text=Zawód:+Budowniczy+Nowej+Polski.+Dlaczego+w+DO+Przodu+płacimy+za+zmienianie świata?+%23DO_Przodu+%23DemokracjaObywatelska"
+         target="_blank" rel="noopener" class="share-icon share-x" title="Udostępnij na X">𝕏</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p style="font-size:0.9rem; color:#8892a4; margin-bottom:0.4rem;">
+    <strong style="color:#fff;">Ruch Demokracja Obywatelska – DO Przodu</strong>
+  </p>
+  <p>RuchDO.pl – Open Source. Zamykamy sprawy dzielące. Idziemy DO PRZODU.</p>
+  <p style="margin-top:0.8rem;">
+    <a href="about.html" target="_self">O nas</a> &nbsp;·&nbsp;
+    <a href="inside.html" target="_self">Od środka</a> &nbsp;·&nbsp;
+    <a href="contact.html" target="_self">Kontakt</a>
+  </p>
+  <p style="margin-top:0.8rem;">
+    <a href="https://x.com/Ruch_DO_Przodu" target="_blank">X.com</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/profile.php?id=61587363660799" target="_blank">Facebook</a>  
+  </p>
+</footer>
+
+
+<script>
+  // ── SHARE WIDGET ──
+  function toggleShareMenu() {
+    document.getElementById('shareMenu').classList.toggle('open');
+  }
+  function copyShareLink(btn) {
+    navigator.clipboard.writeText('https://ruchdo.pl/i03.html').then(function() {
+      var lbl = btn.querySelector('.share-opt-label');
+      lbl.textContent = 'Skopiowano! ✓';
+      setTimeout(function() { lbl.textContent = 'Kopiuj link strony'; }, 2000);
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var wrapper = document.querySelector('.share-widget-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+      var menu = document.getElementById('shareMenu');
+      if (menu) menu.classList.remove('open');
+    }
+  });
+
+</script>
+</body>
+</html>
